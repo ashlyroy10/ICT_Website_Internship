@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import HeaderMain from './components/HeaderMain'
 import WhatWeDo from './pages/WhatWeDo';
 import WhoWeAre from './pages/WhoWeAre';
 import Home from './pages/Home';
@@ -15,7 +14,6 @@ import AddTestimonial from './components/AddTestimonial';
 function App() {
   return (
     <div className="App">
-     <HeaderMain/>
      <Routes>
      <Route path='/' element={<Home/>}/>
       <Route path='/what_we_do' element={<WhatWeDo/>}/>

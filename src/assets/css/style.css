@@ -7,6 +7,39 @@ html{
     padding: 0;
 }
 
+.header-admin {
+    width: 100%;
+    height: 100px;
+    background-color: #f4f4f6;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #2a3843;
+    position: top; 
+    z-index: 1;
+}
+
+.header-admin .ictlogo {
+    width: 250px;
+}
+
+.login-container {
+    margin: 5rem;
+    padding: 5rem;
+}
+
+.login-box{
+    width: 30%;
+    height: 50%;
+    background-color: #E5FDD1;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: auto;
+    padding: 2rem;
+}
+
+.dash-body {
+    height: calc(100%-100px);
+}
+
 .font-link{
     font-family: 'Poppins', sans-serif;
 }
@@ -89,3 +122,81 @@ body{
 /* .share{
     scroll-snap-type:y mandatory;
 } */
+
+
+/* Vijay Style */
+
+.header-admin {
+    width: 100%;
+    height: 100px;
+    background-color: #f4f4f6;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #2a3843;
+    position: top; 
+    z-index: 1;
+}
+
+.header-admin .ictlogo {
+    width: 250px;
+}
+
+.login-container {
+    margin: 5rem;
+    padding: 5rem;
+}
+
+.login-box{
+    width: 30%;
+    height: 50%;
+    background-color: #E5FDD1;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: auto;
+    padding: 2rem;
+}
+
+.dash-body {
+    height: calc(100%-100px);
+}
+
+
+.side-pane {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;      
+    background-color: #2a3843;
+    z-index: 0;
+    position: relative;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+
+.side-pane h5 {
+    font-size: medium;
+}
+
+.side-pane ul {
+    list-style: none;
+    margin-top: 5px;
+    height: calc(100vh - 100px);  
+}
+
+.side-pane .side-button {
+    width: 200px;
+    border-radius: 4rem;   
+    color: #f4f4f6;
+}
+
+.sid-epane .side-navitem li {
+    background-color: #A4E5E0;
+    padding: 8px;
+    border-radius: 3rem;
+}
+
+.side-pane .side-navitem {
+    text-decoration: none;
+    margin: auto;
+}
+
+.side-pane .side-button:hover{
+    cursor: pointer;
+}

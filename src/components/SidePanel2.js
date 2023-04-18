@@ -9,10 +9,10 @@ import Team from './Team'
 const SidePanel1 = () => {
   return (
     <div>
-      <div className='container-fluid '> 
+      <div className='container-fluid d-flex'> 
         <div className='row'>
           <div className='sidepane col-2 vh-100 sticky-lg-top'>
-            <ul className='nav nav-tabs flex-column my-2' id="myTab" role="tablist">
+            <ul className='nav nav-tabs my-2' id="myTab" role="tablist">
               <li className="nav-item" role="presentation">
                 <button className="sidebtn fw-bold btn nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about-tab-pane" type="button" role="tab" aria-controls="about-tab-pane" aria-selected="true">About Us</button>
               </li>
@@ -27,6 +27,7 @@ const SidePanel1 = () => {
               </li>
             </ul>
           </div>
+          
           <div className="col-10">
             <div className="tab-content flex-grow-1" id="myTabContent">
               <div className="tab-pane fade show active" id="about-tab-pane" role="tabpanel" aria-labelledby="about-tab" tabindex="0"><AboutUs/></div>

@@ -14,7 +14,7 @@ import AddTestimonial from './components/AddTestimonial';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App font-link">
      <HeaderMain/>
      <Routes>
      <Route path='/' element={<Home/>}/>

@@ -49,9 +49,11 @@ body{
 }
 
 .header-main{
-    background-color:#74BDCB;
-    max-height: 5.5rem;
+    background: rgb(151,171,255);
+    background: linear-gradient(35deg, rgba(151,171,255,1) 79%, rgba(18,53,151,1) 100%);;
+    max-height: 100px;
     z-index: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
 }
 .header-main img{
     width: 260px;
@@ -67,7 +69,8 @@ body{
     margin-left: 25px;
     margin-right: 65px;
     border-radius: 50px;
-    background-color:#050A30;
+    background-color:#f09d21;
+    color: #050A30;
 }
 
 .coursebutton:hover{
@@ -75,17 +78,18 @@ body{
     color: #050A30;
 }
 
-.sidepane{
-    background-color: #74BDCB;
-    top:calc(100%-5.5rem);
-    z-index: 0;
-}
-
 .sidebtn{
     color: #050A30;
     padding-top: 10px;
     width: 220px;
 }
+
+.sidepane{
+    background: rgb(151,171,255);
+    background: linear-gradient(150deg, rgba(151,171,255,1) 35%, rgba(18,53,151,1) 90%);
+    z-index: 0;
+}
+
 .sidepane ul{
     list-style: none;
     padding: 0%;

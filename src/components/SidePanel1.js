@@ -9,10 +9,10 @@ import Events from './Events'
 const SidePanel1 = () => {
   return (
     <div>
-      <div className='container-fluid'> 
+      <div className='container-fluid d-flex'> 
         <div className='row'>
           <div className='sidepane col-2 vh-100 sticky-lg-top'>
-            <ul className='nav nav-tabs flex-column my-2' id="myTab" role="tablist">
+            <ul className='nav nav-tabs my-2' id="myTab" role="tablist">
               <li className="nav-item" role="presentation">
                 <button className="sidebtn fw-bold btn nav-link active" id="train-tab" data-bs-toggle="tab" data-bs-target="#train-tab-pane" type="button" role="tab" aria-controls="train-tab-pane" aria-selected="true">Trainings</button>
               </li>

@@ -5,6 +5,12 @@ import WhatWeDo from './pages/WhatWeDo';
 import WhoWeAre from './pages/WhoWeAre';
 import Home from './pages/Home';
 
+import Admindashboard from './pages/Admindashboard';
+import Adminlogin from './pages/Adminlogin';
+import AddCourse from './components/AddCourse';
+import AddStaff from './components/AddStaff';
+import AddTestimonial from './components/AddTestimonial';
+
 
 function App() {
   return (
@@ -14,6 +20,12 @@ function App() {
      <Route path='/' element={<Home/>}/>
       <Route path='/what_we_do' element={<WhatWeDo/>}/>
       <Route path='/who_we_are' element={<WhoWeAre/>}/>
+
+      <Route path='/admindashboard' element={<Admindashboard/>} />
+      <Route path='/adminlogin' element={<Adminlogin/>} />  
+      <Route path='/admindashboard/addcourse' element={<AddCourse/>} />
+      <Route path='/admindashboard/addstaff' element={<AddStaff/>} /> 
+      <Route path='/admindashboard/addtestimonials' element={<AddTestimonial/>} /> 
      </Routes>
     </div>
   );

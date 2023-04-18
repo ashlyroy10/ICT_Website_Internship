@@ -53,11 +53,6 @@ body{
     padding-top: 10px;
     width: 220px;
 }
-
-/* .sidebar{
-    padding-top: calc(100%-5.5rem);
-} */
-
 .sidepane ul{
     list-style: none;
     padding: 0%;

@@ -14,7 +14,7 @@ import AddTestimonial from './components/AddTestimonial';
 
 function App() {
   return (
-    <div className="App font-link">
+    <div className="App">
      <HeaderMain/>
      <Routes>
      <Route path='/' element={<Home/>}/>
@@ -27,6 +27,7 @@ function App() {
       <Route path='/admindashboard/addstaff' element={<AddStaff/>} /> 
       <Route path='/admindashboard/addtestimonials' element={<AddTestimonial/>} /> 
      </Routes>
+     
     </div>
   );
 }

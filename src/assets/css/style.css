@@ -204,3 +204,25 @@ body{
 .side-pane .side-button:hover{
     cursor: pointer;
 }
+
+.footer {
+    position: absolute;
+    background-color: rgba(20, 71, 95, 0.582);
+    font-size: small;
+    padding: 10px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    z-index: 1;
+       
+  }
+  
+  .footer p{
+    line-height: 0.5;
+  }
+  
+  .image-div img{
+    max-width: 650px;
+  }
+  

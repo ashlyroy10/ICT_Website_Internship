@@ -9,7 +9,7 @@ import Events from './Events'
 const SidePanel1 = () => {
   return (
     <div>
-      <div className='container-fluid d-flex'> 
+      <div className='container-fluid d-flex justify-content-evenly'> 
         <div className='row'>
           <div className='sidepane col-2 vh-100 sticky-lg-top'>
             <ul className='nav nav-tabs my-2' id="myTab" role="tablist">

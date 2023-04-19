@@ -82,18 +82,21 @@ body{
 .sidebtn{
     color: #050A30;
     padding-top: 10px;
-    width: 220px;
+    width: 80%;
 }
 
 .sidepane{
     background: rgb(151,171,255);
     background: linear-gradient(150deg, rgba(151,171,255,1) 35%, rgba(18,53,151,1) 90%);
     z-index: 0;
+    text-align: center;
 }
 
 .sidepane ul{
     list-style: none;
     width: 100%;
+    margin: auto;
+    
 }
 
 .sidepane ul li{
@@ -111,7 +114,7 @@ body{
 }
 
 .share img,.leaders img,.trainings img,.govern img,.partner img{
-    width: 350px;
+    width: 300px;
 }
 
 .card-custom{
@@ -120,6 +123,10 @@ body{
 
 .card{
     max-width: 540px;
+}
+
+.info-box {
+    margin: auto;
 }
 
 /* .share{

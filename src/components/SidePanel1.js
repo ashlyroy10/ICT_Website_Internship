@@ -5,6 +5,7 @@ import Government from './Government'
 import Partner from './Partner'
 import Project from './Project'
 import Events from './Events'
+import OperatingUnit from './OperatingUnit'
 
 const SidePanel1 = () => {
   return (
@@ -23,6 +24,9 @@ const SidePanel1 = () => {
                 <button className="sidebtn fw-bold btn nav-link" id="partner-tab" data-bs-toggle="tab" data-bs-target="#partner-tab-pane" type="button" role="tab" aria-controls="partner-tab-pane" aria-selected="false">Partner Program</button>
               </li>
               <li className="nav-item" role="presentation">
+                <button className="sidebtn fw-bold btn nav-link" id="ou-tab" data-bs-toggle="tab" data-bs-target="#ou-tab-pane" type="button" role="tab" aria-controls="ou-tab-pane" aria-selected="false">Operating Unit</button>
+              </li>
+              <li className="nav-item" role="presentation">
                 <button className="sidebtn fw-bold btn nav-link" id="project-tab" data-bs-toggle="tab" data-bs-target="#project-tab-pane" type="button" role="tab" aria-controls="project-tab-pane" aria-selected="false">Our Projects</button>
               </li>
               <li className="nav-item" role="presentation">
@@ -35,6 +39,7 @@ const SidePanel1 = () => {
               <div className="tab-pane fade show active" id="train-tab-pane" role="tabpanel" aria-labelledby="train-tab" tabindex="0"><Trainings/></div>
               <div className="tab-pane fade" id="govern-tab-pane" role="tabpanel" aria-labelledby="govern-tab" tabindex="0"><Government/></div>
               <div className="tab-pane fade" id="partner-tab-pane" role="tabpanel" aria-labelledby="partner-tab" tabindex="0"><Partner/></div>
+              <div className="tab-pane fade" id="ou-tab-pane" role="tabpanel" aria-labelledby="ou-tab" tabindex="0"><OperatingUnit/></div>
               <div className="tab-pane fade" id="project-tab-pane" role="tabpanel" aria-labelledby="project-tab" tabindex="0"><Project/></div>
               <div className="tab-pane fade" id="event-tab-pane" role="tabpanel" aria-labelledby="event-tab" tabindex="0"><Events/></div>
             </div>

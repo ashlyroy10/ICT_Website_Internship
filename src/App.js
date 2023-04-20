@@ -10,13 +10,19 @@ import Adminlogin from './pages/Adminlogin';
 import AddCourse from './components/AddCourse';
 import AddStaff from './components/AddStaff';
 import AddTestimonial from './components/AddTestimonial';
+import SidePanel1 from './components/SidePanel1';
+import Courselist from './pages/Courselist';
 
 
 function App() {
   return (
     <div className="App">
+
+      {/* <SidePanel1/> */}
+      <Courselist/>
+      
   
-     <Routes>
+     {/* <Routes>
      <Route path='/' element={<Home/>}/>
       <Route path='/what_we_do' element={<WhatWeDo/>}/>
       <Route path='/who_we_are' element={<WhoWeAre/>}/>
@@ -28,7 +34,7 @@ function App() {
       <Route path='/admindashboard/addstaff' element={<AddStaff/>} /> 
       <Route path='/admindashboard/addtestimonials' element={<AddTestimonial/>} /> 
     
-     </Routes>
+     </Routes> */}
      
     </div>
   );

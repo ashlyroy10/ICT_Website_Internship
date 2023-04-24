@@ -82,18 +82,21 @@ body{
 .sidebtn{
     color: #050A30;
     padding-top: 10px;
-    width: 220px;
+    width: 80%;
 }
 
 .sidepane{
     background: rgb(151,171,255);
     background: linear-gradient(150deg, rgba(151,171,255,1) 35%, rgba(18,53,151,1) 90%);
     z-index: 0;
+    text-align: center;
 }
 
 .sidepane ul{
     list-style: none;
     width: 100%;
+    margin: auto;
+    
 }
 
 .sidepane ul li{
@@ -104,14 +107,14 @@ body{
     border-radius: 50px;
 }
 
-.share p, .leaders p, .train p,.govern p, .partner p,.project p,.trainings p,.govern p,.partner p{
+.share p, .leaders p, .train p,.govern p, .partner p,.project p,.trainings p,.govern p,.partner p,.general p,.ou p{
     text-align: justify;
     padding-left: 55px;
     padding-right: 55px;
 }
 
-.share img,.leaders img,.trainings img,.govern img,.partner img{
-    width: 350px;
+.share img,.leaders img,.trainings img,.govern img,.partner img,.ou img{
+    width: 300px;
 }
 
 .card-custom{
@@ -120,6 +123,10 @@ body{
 
 .card{
     max-width: 540px;
+}
+
+.info-box {
+    margin: auto;
 }
 
 /* .share{
@@ -236,3 +243,79 @@ body{
   .image-div img{
     max-width: 650px;
   }
+  
+  .side-info ul{
+    list-style: none;
+  }
+
+  /* additional css work by Anooj */
+
+  .nice {
+    width: 100%;
+    height: 80vh;
+    background: #7799d4;
+  }
+  
+  .nice .container {
+    padding-top: 72px;
+  }
+  
+  .p1 h1 {
+    margin: 0 0 10px 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #000000;
+  }
+  .p1 h5 {
+    color:rgb(19, 14, 14);
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .p2 button:hover {
+    background: #209dd8;
+  }
+
+/* .p2  {
+    position: relative;
+  }
+
+.animationpic{
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: move 3.5s linear infinite;
+
+}
+
+@keyframes move{
+    0%{
+        transform: translate(-50px,0px);
+    }
+    50%{
+        transform: translate(0px,-10px);
+    }
+    100%{
+        transform: translate(-35px,0px);
+    }
+} */
+
+.col{
+    margin-bottom: 0px;
+    margin-top: 10px;
+    
+    
+    
+    
+   
+}
+
+.card1{
+    max-width: 540px;
+}
+
+.card-custom1{
+    min-height: 150px;
+}

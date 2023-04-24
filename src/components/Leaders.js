@@ -7,10 +7,10 @@ const Leaders = () => {
   return (
     <div className='font-link'>
       <br/><br/>
-      <div className='leaders'>
+      <div className='leaders d-flex'>
         <div className='row'>
-          <div className='col-3'><img src={chairman} class="rounded float-start" alt="img"/></div>
-          <div className='col-9 pt-3'>
+          <div className='col-3 px-2'><img src={chairman} class="rounded float-start" alt="img"/></div>
+          <div className='info-box col-9 pt-3 px-3'>
             <h2>Meet our Chairman</h2>
             <p>"The ICT Academy of Kerala has emerged as a strategic partner for the industry, academia, and government in bridging the skills gap in the field of Information Communication Technology. Over the years, ICT Academy has successfully supported the industry and academia in talent needs and skills supply and has touched youths and professionals alike in fulfilling their career aspirations. We will continue to invest in building capabilities in the latest technology and business domains to help our beneficiaries. 
                   We shall work with the Government of Kerala in its mission for talent development and employment."</p>

@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes} from 'react-router-dom';
 import './App.css';
 import WhatWeDo from './pages/WhatWeDo';
 import WhoWeAre from './pages/WhoWeAre';
@@ -13,7 +13,7 @@ import AddTestimonial from './components/AddTestimonial';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App min-vw-100">
      <Routes>
      <Route path='/' element={<Home/>}/>
       <Route path='/what_we_do' element={<WhatWeDo/>}/>

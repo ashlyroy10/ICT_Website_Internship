@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Adminheader from './Adminheader'
 import { Link } from 'react-router-dom'
+import { ValidateStaff } from './Validate';
 
 const AddStaff = () => {
+
+    const [staffDetails, setStaffDetails] = useState({
+        staffname: '',
+        photo: '',
+        designation:'',
+        department:''
+    })
+
+    let [errors, setErrors] = useState({});
+
+    function handleInput(event) {
+        event.preventDefault();
+        const courseObj = {...staffDetails, [event.target.name]:event.target.value}
+        setStaffDetails(courseObj)
+        setErrors(ValidateStaff(courseObj))
+    }
+    
   return (
     <div>
         <Adminheader />
@@ -29,21 +47,25 @@ const AddStaff = () => {
                 <div className='form-box w-50'>
                 <form>
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="sname" placeholder='Name' />
+                    <input type="text" class="form-control" id="sname" name='staffname' onChange={handleInput} placeholder='Name' maxLength={30}/>
+                    {<p style={{color:"red"}}>{errors.staffname}</p>}
                 </div>
 
                 <div class="mb-3">
                     <label for="sImage" class="form-label">Upload Photo</label>
-                    <input class="form-control" type="file" id="sImage" placeholder='Upload Photo' />
+                    <input class="form-control" type="file" id="sImage" name='photo' onChange={handleInput} placeholder='Upload Photo' />
+                    
                 </div>
 
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="designation" placeholder='Designation' />
+                    <input type="text" class="form-control" id="designation" name='designation' onChange={handleInput} placeholder='Designation' maxLength={50}/>
+                    {<p style={{color:"red"}}>{errors.designation}</p>}
                 </div>
 
                 <div class="mb-3">
                   <label for="department" class="form-label">Select Operational Unit:</label>
-                  <select className='form-control' name="department" id="department">
+                  <select className='form-control' name="department" onChange={handleInput} id="department">
+                    <option value=""></option>
                     <option value="acd">Academic</option>
                     <option value="crp">Corporate</option>
                     <option value="gov">Government</option>
@@ -51,7 +73,9 @@ const AddStaff = () => {
                     <option value="kgo">Knowledge Office</option>
                     <option value="rtl">Retail</option>
                     <option value="crf">Corporate Functions</option>
-                  </select>                    
+                  </select>
+                  {<p style={{color:"red"}}>{errors.department}</p>}
+
                 </div>
                 
                 <div class="mb-3">

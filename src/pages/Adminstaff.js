@@ -5,7 +5,7 @@ const Adminstaff = () => {
   //DUMMY Data
   const staffList = [  
     {    
-      name: "John Smith",    
+      staffname: "John Smith",    
       designation: "Senior Manager",
       photo: "https://example.com/a.jpg",    
       department: "Marketing",    
@@ -13,7 +13,7 @@ const Adminstaff = () => {
     },  
     
     {    
-      name: "Jane Doe",   
+      staffname: "Jane Doe",   
       photo: "https://example.com/b.jpg", 
       designation: "Software Engineer",    
       department: "Engineering",    
@@ -21,7 +21,7 @@ const Adminstaff = () => {
     },  
     
     {    
-      name: "Bob Johnson",
+      staffname: "Bob Johnson",
       photo: "https://example.com/c.jpg",  
       designation: "Sales Representative",    
       department: "Sales",    
@@ -29,7 +29,7 @@ const Adminstaff = () => {
     },  
     
     {    
-      name: "Sarah Lee",    
+      staffname: "Sarah Lee",    
       photo: "https://example.com/d.jpg", 
       designation: "Product Manager",    
       department: "Product Management",    
@@ -37,7 +37,7 @@ const Adminstaff = () => {
     },  
     
     {    
-      name: "Tommy Lee",    
+      staffname: "Tommy Lee",    
       photo: "https://example.com/e.jpg", 
       designation: "Graphic Designer",    
       department: "Creative",    
@@ -79,8 +79,8 @@ const Adminstaff = () => {
         {staffList.map((staff, index) => (
             <tr key={index}>
               <td>{index+1}</td>
-              <td>{staff.name}</td>
-              <td><img src={staff.photo} alt={staff.name} /></td>
+              <td>{staff.staffname}</td>
+              <td><img src={staff.photo} alt={staff.staffname} /></td>
               <td>{staff.designation}</td>
               <td>{staff.department}</td>
               <td></td>

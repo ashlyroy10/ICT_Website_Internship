@@ -13,14 +13,10 @@ import AddTestimonial from './components/AddTestimonial';
 
 function App() {
   return (
-<<<<<<< HEAD
-    <div className="App min-vw-100">
-     <Routes>
-=======
-    <div className="App">
 
-  
-     {/* <Routes>
+    <div className="App min-vw-100">
+
+     <Routes>
      <Route path='/' element={<Home/>}/>
       <Route path='/what_we_do' element={<WhatWeDo/>}/>
       <Route path='/who_we_are' element={<WhoWeAre/>}/>

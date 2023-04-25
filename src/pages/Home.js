@@ -1,5 +1,9 @@
 import React from 'react'
 import HeaderMain from '../components/HeaderMain'
+import Testimonialcarousel from '../components/Testimonialcarousel'
+import Footer from '../components/Footer'
+import Introcard from '../components/Introcard'
+import Intropart from '../pages/Intropart'
 
 const Home = () => {
   return (
@@ -19,7 +23,7 @@ const Home = () => {
     </div>
 
     <div className='row'>
-      <Introcard />
+      <Introcard/>
     </div>
 
     <div className='row'>

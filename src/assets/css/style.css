@@ -224,7 +224,7 @@ body{
 /* anooj's css */
 
 .footer {
-    position: absolute;
+    bottom: 0;
     background-color: rgba(20, 71, 95, 0.582);
     font-size: small;
     padding: 10px;
@@ -305,11 +305,6 @@ body{
 .col{
     margin-bottom: 0px;
     margin-top: 10px;
-    
-    
-    
-    
-   
 }
 
 .card1{
@@ -318,4 +313,31 @@ body{
 
 .card-custom1{
     min-height: 150px;
+}
+
+/* coursesection page css */
+
+.courses .single-courses-box{
+  margin-bottom: 30px;
+  position: relative;
+  padding: 40px 30 px;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+
+}
+
+.courses .single-courses-box icon{
+    margin-bottom: 21px;
+}
+
+.courses .single-courses-box h3{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.courses .single-courses-box p{
+    font-size: 14px;
+    text-align: justify;
 }

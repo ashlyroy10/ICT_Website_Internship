@@ -8,16 +8,6 @@ body {
     background-color: #16d5c5;
 }
 
-.header-admin {
-    width: 100%;
-    height: 100px;
-    background-color: #f4f4f6;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    color: #2a3843;
-    position: top; 
-    z-index: 1;
-}
-
 .header-admin .ictlogo {
     width: 250px;
 }
@@ -139,9 +129,8 @@ body{
 .header-admin {
     width: 100%;
     height: 100px;
-    background: rgb(129,148,144);
-    background: rgb(141,184,138);
-    background: linear-gradient(157deg, rgba(141,184,138,1) 0%, rgba(86,247,232,1) 100%);
+    /* background: #e8eaf6; */
+    /* background: #c5cae9; */
     color: #000000;
     font-weight: bold;
     font-size: large;
@@ -170,18 +159,23 @@ body{
 
 .dash-body {
     height: calc(100%-100px);
-}
+    background: rgb(252,250,220);
+    background: -moz-linear-gradient(34deg, rgba(252,250,220,1) 11%, rgba(249,255,245,1) 97%);
+    background: -webkit-linear-gradient(34deg, rgba(252,250,220,1) 11%, rgba(249,255,245,1) 97%);
+    background: linear-gradient(34deg, rgba(252,250,220,1) 11%, rgba(249,255,245,1) 97%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fcfadc",endColorstr="#f9fff5",GradientType=1);
+    }
 
 
 .side-pane {
     display: flex;
     flex-direction: row;
     flex-flow: row;      
-    background: rgb(141,184,138);
-    background: linear-gradient(180deg, rgba(141,184,138,1) 0%, rgba(86,247,232,1) 100%);
-    z-index: 0;
+    background: #c9c8c7;
+    /* background: #e8eaf6; */
+    z-index: 0;    
     position: relative;
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .side-pane h5 {
@@ -201,17 +195,18 @@ body{
 }
 
 .sid-epane .side-navitem li {
-    background-color: #A4E5E0;
     padding: 8px;
     border-radius: 3rem;
 }
 
 .side-pane .side-navitem {
+    
     text-decoration: none;
     margin: auto;
 }
 
 .side-pane .side-button:hover{
+    background-color: #ffc107;
     cursor: pointer;
 }
 

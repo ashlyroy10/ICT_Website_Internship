@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Adminheader from './Adminheader'
 import { Link } from 'react-router-dom'
 import { ValidateStaff } from './Validate';
+import axios from 'axios';
 
 const AddStaff = () => {
 
@@ -13,13 +14,42 @@ const AddStaff = () => {
     })
 
     let [errors, setErrors] = useState({});
+    let [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
+    
+    //Validation
     function handleInput(event) {
         event.preventDefault();
-        const courseObj = {...staffDetails, [event.target.name]:event.target.value}
-        setStaffDetails(courseObj)
-        setErrors(ValidateStaff(courseObj))
+        const staffObj = {...staffDetails, [event.target.name]:event.target.value}
+        setStaffDetails(staffObj)
+        setErrors(ValidateStaff(staffObj))       
     }
+
+     //Checking Errros
+     useEffect(() => {
+        if (Object.keys(errors).length === 0) {
+          setIsButtonDisabled(false);
+        } else {
+          setIsButtonDisabled(true);
+        }
+      }, [errors]);
+
+    //insert function
+    var inputstaff = (e) => {
+        e.preventDefault();
+        console.log(staffDetails);        
+    axios
+      .post("/addstaff", staffDetails)
+      .then((response) => {
+        console.log(response);
+        alert("New Staff Added")
+      })
+      .catch((error) => {
+        console.log(error);
+      });   
+
+    window.location.reload();
+    };
     
   return (
     <div>
@@ -39,7 +69,7 @@ const AddStaff = () => {
                 </div>
 
                 <div className='col-11'>
-                    <h3>Add Staff Details</h3>
+                    <h3>Staff Details</h3>
                 </div>
                 
             </div>
@@ -79,7 +109,7 @@ const AddStaff = () => {
                 </div>
                 
                 <div class="mb-3">
-                    <button className='btn btn-success w-25'>Save</button>
+                    <button className='btn btn-success w-25' onClick={inputstaff} disabled={isButtonDisabled}>Save</button>
                 </div>
                 </form>
                 </div>

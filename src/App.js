@@ -11,14 +11,16 @@ import AddCourse from './components/AddCourse';
 import AddStaff from './components/AddStaff';
 import AddTestimonial from './components/AddTestimonial';
 import SidePanel1 from './components/SidePanel1';
-import Courselist from './pages/Courselist';
+import Why_ICT_Course from './pages/Why_ICT_Course';
 
 
 function App() {
   return (
     <div className="App">
       
-  
+     {/* <Why_ICT_Course/> */}
+
+     
      <Routes>
      <Route path='/' element={<Home/>}/>
       <Route path='/what_we_do' element={<WhatWeDo/>}/>

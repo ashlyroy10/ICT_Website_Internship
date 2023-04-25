@@ -1,8 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Adminheader from './Adminheader'
 import { Link } from 'react-router-dom'
+import { ValidateCourse } from './Validate';
 
 const AddCourse = () => {
+
+    const [courseDetails, setCourseDetails] = useState({
+        coursetitle: '',
+        overview: '',
+        thumbImage:'',
+        syllabusfile:'',
+        description: '',
+        duration: '',
+        fee:'',
+        startdate: '',
+        enddate: ''
+
+    })
+
+    let [errors, setErrors] = useState({});
+
+    function handleInput(event) {
+        event.preventDefault();
+        const courseObj = {...courseDetails, [event.target.name]:event.target.value}
+        setCourseDetails(courseObj)
+        setErrors(ValidateCourse(courseObj))
+    }
+
+    // function handleValidation (event) {
+    //     event.preventDefault();
+    //     setErrors(Validate(courseDetails))
+    // }
+
   return (
     <div>
         <Adminheader />
@@ -29,53 +58,60 @@ const AddCourse = () => {
                 <div className='form-box w-50'>
                 <form>
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="coursetitle" placeholder='Course Title' />
+                    <input type="text" class="form-control" name='coursetitle' id="coursetitle" placeholder='Course Title' onChange={handleInput} />
+                    {<p style={{color:"red"}}>{errors.coursetitle}</p>}
                 </div>
 
                 <div class="mb-3 row">
                     <div className='col'>
                         <label for="thumbImage" class="form-label">Upload Thumbnail</label>
-                        <input class="form-control" type="file" id="thumbImage" placeholder='Upload Thumbnail' />
+                        <input class="form-control" type="file" name='thumbImage' id="thumbImage" placeholder='Upload Thumbnail' />
                     </div>
 
                     <div className='col'>
                         <label for="syllabusfile" class="form-label">Upload Syllabus</label>
-                        <input class="form-control" type="file" id="syllabusfile" placeholder='Upload Syllabus' />
+                        <input class="form-control" type="file" name='syllabusfile' id="syllabusfile" placeholder='Upload Syllabus' />
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <textarea class="form-control" id="overview" placeholder='Course Overview' ></textarea>
+                    <textarea class="form-control" name='overview' id="overview" placeholder='Course Overview' onChange={handleInput} ></textarea>
+                    {<p style={{color:"red"}}>{errors.overview}</p>}
                 </div>
 
                 <div class="mb-3">
-                    <textarea class="form-control" id="description" placeholder='Course Description' ></textarea>
+                    <textarea class="form-control" name='description' id="description" placeholder='Course Description' onChange={handleInput} ></textarea>
+                    {<p style={{color:"red"}}>{errors.description}</p>}
                 </div>
 
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="duration" placeholder='Duration (In weeks)' />
+                    <input type="text" class="form-control" name='duration' id="duration" placeholder='Duration (In weeks)' onChange={handleInput} />
+                    {<p style={{color:"red"}}>{errors.duration}</p>}
                 </div>
 
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="fee" placeholder='Fee' />
+                    <input type="text" class="form-control" name='fee' id="fee" placeholder='Fee (in INR)' onChange={handleInput} />
+                    {<p style={{color:"red"}}>{errors.fee}</p>}
                 </div>
 
                 <div className='row mb-3'>
                 <div class="col">
                     <label for="startdate" class="form-label">Registration Start
-                    <input type="date" class="form-control" id="startdate" /></label>
+                    <input type="date" class="form-control" name='startdate' id="startdate" onChange={handleInput} /></label>
+                    {<p style={{color:"red"}}>{errors.startdate}</p>}
                 </div>
 
                 <div class="col">
                     <label for="enddate" class="form-label">Registration End
-                    <input type="date" class="form-control" id="enddate" /></label>
+                    <input type="date" class="form-control" name='enddate' id="enddate" onChange={handleInput} /></label>
+                    {<p style={{color:"red"}}>{errors.enddate}</p>}
                 </div>
                 </div>
                 <div class="mb-3">
                                        
                 </div>
                 <div class="mb-3">
-                    <button className='btn btn-success w-25'>Save</button>
+                    <button type='submit' className='btn btn-success w-25'>Save</button>
                 </div>
                 </form>
                 </div>

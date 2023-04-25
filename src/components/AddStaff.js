@@ -1,8 +1,56 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Adminheader from './Adminheader'
 import { Link } from 'react-router-dom'
+import { ValidateStaff } from './Validate';
+import axios from 'axios';
 
 const AddStaff = () => {
+
+    const [staffDetails, setStaffDetails] = useState({
+        staffname: '',
+        photo: '',
+        designation:'',
+        department:''
+    })
+
+    let [errors, setErrors] = useState({});
+    let [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
+    
+    //Validation
+    function handleInput(event) {
+        event.preventDefault();
+        const staffObj = {...staffDetails, [event.target.name]:event.target.value}
+        setStaffDetails(staffObj)
+        setErrors(ValidateStaff(staffObj))       
+    }
+
+     //Checking Errros
+     useEffect(() => {
+        if (Object.keys(errors).length === 0) {
+          setIsButtonDisabled(false);
+        } else {
+          setIsButtonDisabled(true);
+        }
+      }, [errors]);
+
+    //insert function
+    var inputstaff = (e) => {
+        e.preventDefault();
+        console.log(staffDetails);        
+    axios
+      .post("/addstaff", staffDetails)
+      .then((response) => {
+        console.log(response);
+        alert("New Staff Added")
+      })
+      .catch((error) => {
+        console.log(error);
+      });   
+
+    window.location.reload();
+    };
+    
   return (
     <div>
         <Adminheader />
@@ -21,7 +69,7 @@ const AddStaff = () => {
                 </div>
 
                 <div className='col-11'>
-                    <h3>Add Staff Details</h3>
+                    <h3>Staff Details</h3>
                 </div>
                 
             </div>
@@ -29,21 +77,25 @@ const AddStaff = () => {
                 <div className='form-box w-50'>
                 <form>
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="sname" placeholder='Name' />
+                    <input type="text" class="form-control" id="sname" name='staffname' onChange={handleInput} placeholder='Name' maxLength={30}/>
+                    {<p style={{color:"red"}}>{errors.staffname}</p>}
                 </div>
 
                 <div class="mb-3">
                     <label for="sImage" class="form-label">Upload Photo</label>
-                    <input class="form-control" type="file" id="sImage" placeholder='Upload Photo' />
+                    <input class="form-control" type="file" id="sImage" name='photo' onChange={handleInput} placeholder='Upload Photo' />
+                    
                 </div>
 
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="designation" placeholder='Designation' />
+                    <input type="text" class="form-control" id="designation" name='designation' onChange={handleInput} placeholder='Designation' maxLength={50}/>
+                    {<p style={{color:"red"}}>{errors.designation}</p>}
                 </div>
 
                 <div class="mb-3">
                   <label for="department" class="form-label">Select Operational Unit:</label>
-                  <select className='form-control' name="department" id="department">
+                  <select className='form-control' name="department" onChange={handleInput} id="department">
+                    <option value=""></option>
                     <option value="acd">Academic</option>
                     <option value="crp">Corporate</option>
                     <option value="gov">Government</option>
@@ -51,11 +103,13 @@ const AddStaff = () => {
                     <option value="kgo">Knowledge Office</option>
                     <option value="rtl">Retail</option>
                     <option value="crf">Corporate Functions</option>
-                  </select>                    
+                  </select>
+                  {<p style={{color:"red"}}>{errors.department}</p>}
+
                 </div>
                 
                 <div class="mb-3">
-                    <button className='btn btn-success w-25'>Save</button>
+                    <button className='btn btn-success w-25' onClick={inputstaff} disabled={isButtonDisabled}>Save</button>
                 </div>
                 </form>
                 </div>

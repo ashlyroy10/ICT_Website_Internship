@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Adminheader from '../components/Adminheader';
+import { ValidateTestimonials } from './Validate';
 
 const AddTestimonial = () => {
+
+    const [Testimonials, setTestimonials] = useState({
+        testimonial: '',
+        student_name: '',
+        student_photo: '',
+        course:'',
+        batch:''
+    })
+
+    let [errors, setErrors] = useState({});
+
+    function handleInput(event) {
+        event.preventDefault();
+        const courseObj = {...Testimonials, [event.target.name]:event.target.value}
+        setTestimonials(courseObj)
+        setErrors(ValidateTestimonials(courseObj))
+    }
   return (
     <div>
         <Adminheader />
@@ -29,24 +47,28 @@ const AddTestimonial = () => {
                 <div className='form-box w-50'>
                 <form>
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="testimonial" placeholder='Testimonial' />
+                    <input type="text" class="form-control" id="testimonial" name='testimonial' onChange={handleInput} placeholder='Testimonial' />
+                    {<p style={{color:"red"}}>{errors.testimonial}</p>}
                 </div>
 
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="student_name" placeholder='Name of Student' />
+                    <input type="text" class="form-control" id="student_name" name='student_name' onChange={handleInput} placeholder='Name of Student' maxLength={30} />
+                    {<p style={{color:"red"}}>{errors.student_name}</p>}
                 </div>
 
                 <div class="mb-3">
                     <label for="student_photo" class="form-label">Upload Photo</label>
-                    <input class="form-control" type="file" id="student_photo" placeholder='Upload Photo' />
+                    <input class="form-control" type="file" id="student_photo" name='student_photo' onChange={handleInput} placeholder='Upload Photo' />
                 </div>
 
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="course" placeholder='Course' />
+                    <input type="text" class="form-control" id="course" name='course' onChange={handleInput} placeholder='Course' />
+                    {<p style={{color:"red"}}>{errors.course}</p>}
                 </div>
 
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="batch" placeholder='Batch' />
+                    <input type="text" class="form-control" id="batch" name='batch' onChange={handleInput} placeholder='Batch' />
+                    {<p style={{color:"red"}}>{errors.batch}</p>}
                 </div>
 
                 <div class="mb-3">

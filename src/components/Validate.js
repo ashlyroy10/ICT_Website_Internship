@@ -6,7 +6,7 @@ export function ValidateCourse(values){
     const coursetitle_pattern = /^[a-zA-Z0-9]+([ \t]*[a-zA-Z0-9.,]+){4,99}$/
     const overview_pattern = /^[^\s][\w\s.,]{0,179}$/
     const description_pattern = /^(?! )[^\s]{0,499}$/
-    const duration_pattern = /^(?! )([0-5][0-9]|60)$/
+    const duration_pattern = /^(?! )\d{1,3}$/
     const fee_pattern = /^[0-9]{1,3}(?:,?[0-9]{2,3})*(?:\.[0-9]{2})?$/
 
     if(values.coursetitle === "") {
@@ -37,6 +37,13 @@ export function ValidateCourse(values){
             errors.duration = "Not in the right format"
     }
 
+    if(values.internship === ""){
+        errors.internship = "Cannot be Empty"
+    }
+    else if(!duration_pattern.test(values.internship)){
+            errors.internship = "Not in the right format"
+    }
+
     if(values.fee === ""){
         errors.fee = "Cannot be Empty"
     }
@@ -52,6 +59,21 @@ export function ValidateCourse(values){
         errors.enddate = "End Date cannot be Empty"
     }
 
+    if(values.thumbImage === "") {
+        errors.thumbImage = "Thumbnail is Mandatory"
+    }
+
+    if(values.syllabusfile === "") {
+        errors.syllabusfile = "Syllabus is Mandatory"
+    }
+
+    if(values.cmode === "") {
+        errors.cmode = "Cannot be Empty"
+    } 
+
+    if(values.cstatus === "") {
+        errors.cstatus = "Cannot be Empty"
+    } 
 
 return errors;
     

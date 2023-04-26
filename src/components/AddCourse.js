@@ -12,9 +12,12 @@ const AddCourse = () => {
         syllabusfile:'',
         description: '',
         duration: '',
+        internship:'',
         fee:'',
+        cmode:'',
         startdate: '',
-        enddate: ''
+        enddate: '',
+        cstatus: ''
 
     })
 
@@ -65,12 +68,14 @@ const AddCourse = () => {
                 <div class="mb-3 row">
                     <div className='col'>
                         <label for="thumbImage" class="form-label">Upload Thumbnail</label>
-                        <input class="form-control" type="file" name='thumbImage' id="thumbImage" placeholder='Upload Thumbnail' />
+                        <input class="form-control" type="file" name='thumbImage' id="thumbImage" placeholder='Upload Thumbnail' onChange={handleInput} />
+                        {<p style={{color:"red"}}>{errors.thumbImage}</p>}
                     </div>
 
                     <div className='col'>
                         <label for="syllabusfile" class="form-label">Upload Syllabus</label>
-                        <input class="form-control" type="file" name='syllabusfile' id="syllabusfile" placeholder='Upload Syllabus' />
+                        <input class="form-control" type="file" name='syllabusfile' id="syllabusfile" placeholder='Upload Syllabus' onChange={handleInput} />
+                        {<p style={{color:"red"}}>{errors.syllabusfile}</p>}
                     </div>
                 </div>
 
@@ -85,13 +90,30 @@ const AddCourse = () => {
                 </div>
 
                 <div class="mb-3">
-                    <input type="text" class="form-control" name='duration' id="duration" placeholder='Duration (In weeks)' onChange={handleInput} />
+                    <input type="text" class="form-control" name='duration' id="duration" placeholder='Duration (In Hours)' onChange={handleInput} />
                     {<p style={{color:"red"}}>{errors.duration}</p>}
                 </div>
 
                 <div class="mb-3">
-                    <input type="text" class="form-control" name='fee' id="fee" placeholder='Fee (in INR)' onChange={handleInput} />
+                    <input type="text" class="form-control" name='internship' id="internship" placeholder='Internship (In Hours)' onChange={handleInput} />
+                    {<p style={{color:"red"}}>{errors.internship}</p>}
+                </div>
+
+                <div class="mb-3">
+                    <input type="text" class="form-control" name='fee' id="fee" placeholder='Fee (in INR) minus GST' onChange={handleInput} />
                     {<p style={{color:"red"}}>{errors.fee}</p>}
+                </div>
+                
+                <div class="mb-3">
+                  <label for="cmode" class="form-label">Select Mode of Study</label>
+                  <select className='form-control' name="cmode" onChange={handleInput} id="cmode">
+                    <option value=""></option>
+                    <option value="of">Offline</option>
+                    <option value="on">Online</option>
+                    <option value="hy">Hybrid</option>
+                  </select>
+                  {<p style={{color:"red"}}>{errors.cmode}</p>}
+
                 </div>
 
                 <div className='row mb-3'>
@@ -108,6 +130,17 @@ const AddCourse = () => {
                 </div>
                 </div>
                 <div class="mb-3">
+                <div class="mb-3">
+                  <label for="cstatus" class="form-label">Select Course Status</label>
+                  <select className='form-control' name="cstatus" onChange={handleInput} id="cstatus">
+                    <option value=""></option>
+                    <option value="op">Open</option>
+                    <option value="cl">Closed</option>
+                    <option value="ca">Cancelled</option>
+                  </select>
+                  {<p style={{color:"red"}}>{errors.cstatus}</p>}
+
+                </div>
                                        
                 </div>
                 <div class="mb-3">

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
@@ -7,15 +6,15 @@ const AdminTestimonial = () => {
   var [testimonialList, setTestimonialList] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await axios.get("/allstaff");
-        setStafflist(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    fetchData();
+    // async function fetchData() {
+    //   try {
+    //     const response = await axios.get("/allstaff");
+    //     setStafflist(response.data);
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // }
+    // fetchData();
   }, []);
 
   return (

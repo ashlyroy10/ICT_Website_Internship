@@ -10,12 +10,17 @@ import Adminlogin from './pages/Adminlogin';
 import AddCourse from './components/AddCourse';
 import AddStaff from './components/AddStaff';
 import AddTestimonial from './components/AddTestimonial';
+import SidePanel1 from './components/SidePanel1';
+import Why_ICT_Course from './pages/Why_ICT_Course';
+
 
 function App() {
   return (
+    <div className="App">
+      
+     {/* <Why_ICT_Course/> */}
 
-    <div className="App min-vw-100">
-
+     
      <Routes>
      <Route path='/' element={<Home/>}/>
       <Route path='/what_we_do' element={<WhatWeDo/>}/>
@@ -27,9 +32,9 @@ function App() {
       <Route path='/admindashboard/addcourse' element={<AddCourse/>} />
       <Route path='/admindashboard/addstaff' element={<AddStaff/>} /> 
       <Route path='/admindashboard/addtestimonials' element={<AddTestimonial/>} /> 
+    
      </Routes>
      
-    
     </div>
   );
 }

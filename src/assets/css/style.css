@@ -301,11 +301,6 @@ body{
 .col{
     margin-bottom: 0px;
     margin-top: 10px;
-    
-    
-    
-    
-   
 }
 
 .card1{
@@ -314,4 +309,49 @@ body{
 
 .card-custom1{
     min-height: 150px;
+}
+
+/* coursesection page css */
+
+.courses .single-courses-box{
+  margin-bottom: 30px;
+  position: relative;
+  padding: 40px 30 px;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+
+}
+
+.courses .single-courses-box icon{
+    margin-bottom: 21px;
+}
+
+.courses .single-courses-box h3{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.courses .single-courses-box p{
+    font-size: 14px;
+    text-align: justify;
+}
+
+/* Why_ICT_Course css */
+.choose .choose-item {
+    padding: 10px;
+
+}
+.choose .choose-item h3{
+    font-size: 22px;
+    font-weight:600;  
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.choose .choose-item p{
+    font-size: 14px;
+    text-align: justify;
+
 }

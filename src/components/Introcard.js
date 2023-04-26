@@ -1,5 +1,5 @@
 import React from 'react'
-import coursedp from '../assets/image/coursepic.png'
+import coursedp from '../assets/images/coursepic.png'
 // import Testimonal2 from '../assets/image/Testimonal2nd.jpg'
 // import Testimonal3 from '../assets/image/Testimonal3rd.jpg'
 // import Testimonal4 from '../assets/image/Testimonal4th.jpg'

@@ -9,7 +9,7 @@ const Intropart = () => {
         <div class="col-md-6 p1">
         <br/>   
         <br/> 
-          <h1>Build your Career with ICTAK</h1>
+          <h2>Build your Dream Career with ICTAK</h2>
           <h5>ICT Academy of Kerala (ICTAK) is a social enterprise officially launched on the 24th of June, 2014. The organization had a humble beginning providing skill training programs to selected academic institutions. Over the years, ICTAK has grown to a prime service provider of all ICT and innovation-related training and capacity-building programs in the state.</h5>
             
         

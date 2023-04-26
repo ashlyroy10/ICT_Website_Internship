@@ -41,11 +41,11 @@ const AddStaff = () => {
     
       try {
         const response = await axios.post("/addstaff", staffDetails);
-        console.log(response);
+        //console.log(response);
         alert(`${response.data.staffname} Added to Database`);
         window.location.reload();
       } catch (error) {
-        console.log(error);
+        //console.log(error);
         alert("Error adding staff member");
       }
     };

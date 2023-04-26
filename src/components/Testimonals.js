@@ -6,7 +6,7 @@ import Testimonal4 from '../assets/image/Testimonal4th.jpg'
 
 const Testimonals = () => {
   return (
-    <div>
+    <div className='vh-100'>
       
     <div id="demo" class="carousel slide" data-ride="carousel">
 <ul class="carousel-indicators">

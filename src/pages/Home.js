@@ -4,10 +4,11 @@ import Testimonialcarousel from '../components/Testimonialcarousel'
 import Footer from '../components/Footer'
 import Introcard from '../components/Introcard'
 import Intropart from '../pages/Intropart'
+import '../assets/css/style.css'
 
 const Home = () => {
   return (
-    <div>
+    <div className='font-link'>
     <div className='row'>
       <div>
         <HeaderMain/>
@@ -18,11 +19,13 @@ const Home = () => {
       <Intropart/>
     </div>
 
-    <div className='row'>
-      <Testimonialcarousel />
+    <div className='row d-flex vh-100'>
+      <span className='align-middle'>
+        <Testimonialcarousel />
+      </span>
     </div>
 
-    <div className='row'>
+    <div className='row vh-100'>
       <Introcard/>
     </div>
 

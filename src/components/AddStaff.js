@@ -35,21 +35,36 @@ const AddStaff = () => {
       }, [errors]);
 
     //insert function
-    var inputstaff = (e) => {
-        e.preventDefault();
-        console.log(staffDetails);        
-    axios
-      .post("/addstaff", staffDetails)
-      .then((response) => {
+    const inputstaff = async (e) => {
+      e.preventDefault();
+      console.log(staffDetails);
+    
+      try {
+        const response = await axios.post("/addstaff", staffDetails);
         console.log(response);
-        alert("New Staff Added")
-      })
-      .catch((error) => {
+        alert(`${response.data.staffname} Added to Database`);
+        window.location.reload();
+      } catch (error) {
         console.log(error);
-      });   
-
-    window.location.reload();
+        alert("Error adding staff member");
+      }
     };
+    
+    // var inputstaff = (e) => {
+    //     e.preventDefault();
+    //     console.log(staffDetails);        
+    // axios
+    //   .post("/addstaff", staffDetails)
+    //   .then((response) => {
+    //     console.log(response);
+    //     alert(response.data.staffname+"New Staff Added")
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });   
+
+    // window.location.reload();
+    // };
     
   return (
     <div>

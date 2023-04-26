@@ -7,29 +7,39 @@ const Adminstaff = () => {
   var [staffList, setStafflist] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("/allstaff")
-      .then((response) => {
-        setStafflist((staffList = response.data));
-      })
-      .catch((error) => {
+    // axios
+    //   .get("/allstaff")
+    //   .then((response) => {
+    //     setStafflist((staffList = response.data));
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+
+    async function fetchData() {
+      try {
+        const response = await axios.get("/allstaff");
+        setStafflist(response.data);
+      } catch (error) {
         console.log(error);
-      });
+      }
+    }
+    fetchData();
   }, []);
 
   //To delete one entry
-  const deletestaff = (id, e) => {
+  const deletestaff = async (id, e) => {
     e.preventDefault();
-    axios
-      .delete(`/deletestaff/${id}`)
-      .then((response) => {
+    if (window.confirm("Are you sure you want to delete this entry?")) {
+      try {
+        const response = await axios.delete(`/deletestaff/${id}`);
         alert("Entry Deleted");
         window.location.reload();
-      })
-      .catch((error) => {
+      } catch (error) {
         console.log(error);
-      });
-    window.location.reload();
+        alert("Error deleting staff member");
+      }
+    }
   };
 
 

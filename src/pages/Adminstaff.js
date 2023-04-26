@@ -33,7 +33,8 @@ const Adminstaff = () => {
     e.preventDefault();
     if (window.confirm("Are you sure you want to delete this entry?")) {
       try {
-        const response = await axios.delete(`/deletestaff/${id}`);
+        // const response = 
+        await axios.delete(`/deletestaff/${id}`);
         alert("Entry Deleted");
         window.location.reload();
       } catch (error) {

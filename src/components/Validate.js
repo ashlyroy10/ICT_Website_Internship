@@ -4,8 +4,8 @@ export function ValidateCourse(values){
     let errors = {};
 
     const coursetitle_pattern = /^[a-zA-Z0-9]+([ \t]*[a-zA-Z0-9.,]+){4,99}$/
-    const overview_pattern = /^[^\s][\w\s.,]{0,179}$/
-    const description_pattern = /^(?! )[^\s]{0,499}$/
+    const overview_pattern = /^(?:\S+\s+){0,749}\S+$/
+    const description_pattern = /^(?:\S+\s+){0,1999}\S+$/
     const duration_pattern = /^(?! )\d{1,3}$/
     const fee_pattern = /^[0-9]{1,3}(?:,?[0-9]{2,3})*(?:\.[0-9]{2})?$/
 
@@ -73,6 +73,10 @@ export function ValidateCourse(values){
 
     if(values.cstatus === "") {
         errors.cstatus = "Cannot be Empty"
+    } 
+
+    if(values.coursetype === "") {
+        errors.coursetype = "Cannot be Empty"
     } 
 
 return errors;

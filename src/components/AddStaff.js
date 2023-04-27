@@ -50,21 +50,6 @@ const AddStaff = () => {
       }
     };
     
-    // var inputstaff = (e) => {
-    //     e.preventDefault();
-    //     console.log(staffDetails);        
-    // axios
-    //   .post("/addstaff", staffDetails)
-    //   .then((response) => {
-    //     console.log(response);
-    //     alert(response.data.staffname+"New Staff Added")
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });   
-
-    // window.location.reload();
-    // };
     
   return (
     <div>

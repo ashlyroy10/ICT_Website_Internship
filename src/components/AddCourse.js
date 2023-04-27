@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import Adminheader from './Adminheader'
 import { Link } from 'react-router-dom'
 import { ValidateCourse } from './Validate';
+import axios from 'axios';
 
 const AddCourse = () => {
 
     const [courseDetails, setCourseDetails] = useState({
         coursetitle: '',
+        coursetype: '',
         overview: '',
         thumbImage:'',
         syllabusfile:'',
@@ -30,10 +32,21 @@ const AddCourse = () => {
         setErrors(ValidateCourse(courseObj))
     }
 
-    // function handleValidation (event) {
-    //     event.preventDefault();
-    //     setErrors(Validate(courseDetails))
-    // }
+   //insert function
+   const inputcourse = async (e) => {
+    e.preventDefault();
+    console.log(courseDetails);
+  
+    try {
+      const response = await axios.post("/addcourse", courseDetails);
+      //console.log(response);
+      alert(`${response.data.coursetitle} Added to Database`);
+      window.location.reload();
+    } catch (error) {
+      //console.log(error);
+      alert("Error adding staff member");
+    }
+  };
 
   return (
     <div>
@@ -60,9 +73,27 @@ const AddCourse = () => {
             <div className='row d-flex justify-content-center'>
                 <div className='form-box w-50'>
                 <form>
+
                 <div class="mb-3">
                     <input type="text" class="form-control" name='coursetitle' id="coursetitle" placeholder='Course Title' onChange={handleInput} />
                     {<p style={{color:"red"}}>{errors.coursetitle}</p>}
+                </div>
+
+                <div class="mb-3">
+                  <label for="coursetype" class="form-label">Select Course Type</label>
+                  <select className='form-control' name="coursetype" onChange={handleInput} id="coursetype">
+                    <option value=""></option>
+                    <option value="pgt">Post-graduate Programs</option>
+                    <option value="sxm">Six Month Programs</option>
+                    <option value="ltt">Long Term Training</option>
+                    <option value="mcr">Microskill Programs</option>
+                    <option value="shr">Short Term Programs</option>
+                    <option value="aop">Add-on Programs</option>
+                    <option value="tin">Training with Internship</option>
+                    <option value="wen">Workforce Enablement Programs</option>
+                  </select>
+                  {<p style={{color:"red"}}>{errors.coursetype}</p>}
+
                 </div>
 
                 <div class="mb-3 row">
@@ -108,9 +139,9 @@ const AddCourse = () => {
                   <label for="cmode" class="form-label">Select Mode of Study</label>
                   <select className='form-control' name="cmode" onChange={handleInput} id="cmode">
                     <option value=""></option>
-                    <option value="of">Offline</option>
-                    <option value="on">Online</option>
-                    <option value="hy">Hybrid</option>
+                    <option value="offline">Offline</option>
+                    <option value="online">Online</option>
+                    <option value="hybrid">Hybrid</option>
                   </select>
                   {<p style={{color:"red"}}>{errors.cmode}</p>}
 
@@ -144,7 +175,7 @@ const AddCourse = () => {
                                        
                 </div>
                 <div class="mb-3">
-                    <button type='submit' className='btn btn-success w-25'>Save</button>
+                    <button type='submit' className='btn btn-success w-25' onClick={inputcourse}>Save</button>
                 </div>
                 </form>
                 </div>

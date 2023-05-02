@@ -12,6 +12,8 @@ import AddStaff from './components/AddStaff';
 import AddTestimonial from './components/AddTestimonial';
 import SidePanel1 from './components/SidePanel1';
 import Why_ICT_Course from './pages/Why_ICT_Course';
+import EditStaff from './components/EditStaff';
+import EditCourse from './components/EditCourse';
 
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
       <Route path='/what_we_do' element={<WhatWeDo/>}/>
       <Route path='/who_we_are' element={<WhoWeAre/>}/>
       <Route path='/courses' element={<Course/>}/>
+      <Route path='/editstaff/:id' element={<EditStaff/>}/>
+      <Route path='/editcourse/:id' element={<EditCourse/>}/>
 
       <Route path='/admindashboard' element={<Admindashboard/>} />
       <Route path='/adminlogin' element={<Adminlogin/>} />  

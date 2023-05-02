@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
-import axios from "axios";
 
 const AdminTestimonial = () => {
   var [testimonialList, setTestimonialList] = useState([]);
@@ -36,7 +35,7 @@ const AdminTestimonial = () => {
         
       </div>
 
-      <table class="table table-striped table-hover mt-3">
+      <table className="table table-striped table-hover mt-3">
         <thead>
         <tr>
           <th scope="col">#</th>

@@ -11,6 +11,7 @@ const Adminlogin = () => {
   const [adminusername, setAdminUsername] = useState("");
   const [adminpassword, setAdminPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [authenticated, setauthenticated] = useState(false);
 
   const navigate = useNavigate();
 
@@ -24,6 +25,7 @@ const Adminlogin = () => {
   }
 
   useEffect(() => {
+    localStorage.clear();
     fetchData();
   }, []);
 
@@ -42,6 +44,8 @@ const Adminlogin = () => {
     if (admin) {
       // login successful
       console.log('Login Successful');
+      setauthenticated(true)
+      localStorage.setItem("authenticated", true);
       navigate('/admindashboard');
 
     } else {
@@ -55,17 +59,22 @@ const Adminlogin = () => {
   return (
     <div>
       <Adminheader />
-      <div class='login-container container font-link'>
-        <div class ='login-box bg-light'>	
+      <div>
+        
+        <Link to={'/'}>
+          <button type = "button" className="btn btn-success my-3 mx-3">Go Home</button>
+        </Link>
+      </div>
+
+      <div className='login-container container font-link'>
+        <div className ='login-box bg-light'>	
         <h5>Login</h5>
         
-          <div class="form-group">
-            <label for="uname"></label>
-            <input type="text" class="form-control bg-light" id="uname" placeholder="Username" name="adminusername" value={adminusername} onChange={handleAdminUsernameChange} />
+          <div className="form-group my-2">
+            <input type="text" className="form-control bg-light" id="uname" placeholder="Username" name="adminusername" value={adminusername} onChange={handleAdminUsernameChange} />
           </div>
-          <div class="form-group">
-            <label for="pswd"></label>
-            <input type="password" class="form-control bg-light" id="pswd" placeholder="Password" name="adminpassword" value={adminpassword} onChange={handleAdminPasswordChange} />
+          <div className="form-group my-2">
+            <input type="password" className="form-control bg-light" id="pswd" placeholder="Password" name="adminpassword" value={adminpassword} onChange={handleAdminPasswordChange} />
           </div>
           
           {/* <div className="form-check py-3">
@@ -73,9 +82,6 @@ const Adminlogin = () => {
               <input type="checkbox" className="form-check-input" value="" />Remember Me
             </label>	
            </div> */}
-        <Link to={'/'}>
-          <button type = "button" className="btn btn-success my-3 mx-3">Go Home</button>
-        </Link>
         <button type = "button" className="btn btn-primary my-3" onClick={handleLogin}>Login</button>
         
         {errorMessage && (

@@ -19,13 +19,13 @@ const Home = () => {
       <Intropart/>
     </div>
 
-    <div className='row d-flex vh-100'>
+    <div className='row d-flex vh-50'>
       <span className='align-middle'>
         <Testimonialcarousel />
       </span>
     </div>
 
-    <div className='row vh-100'>
+    <div className='row vh-50'>
       <Introcard/>
     </div>
 

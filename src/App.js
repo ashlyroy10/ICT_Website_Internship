@@ -3,6 +3,7 @@ import './App.css';
 import WhatWeDo from './pages/WhatWeDo';
 import WhoWeAre from './pages/WhoWeAre';
 import Course from './pages/Course';
+import Coursesection from './pages/Coursesection';
 import Home from './pages/Home';
 
 import Admindashboard from './pages/Admindashboard';
@@ -14,6 +15,7 @@ import SidePanel1 from './components/SidePanel1';
 import Why_ICT_Course from './pages/Why_ICT_Course';
 import EditStaff from './components/EditStaff';
 import EditCourse from './components/EditCourse';
+import Detailedcards from './components/Detailedcards';
 
 
 function App() {
@@ -27,7 +29,9 @@ function App() {
       <Route exact path='/' element={<Home/>}/>
       <Route path='/what_we_do' element={<WhatWeDo/>}/>
       <Route path='/who_we_are' element={<WhoWeAre/>}/>
-      <Route path='/courses' element={<Course/>}/>
+      <Route path='/courses' element={<Coursesection/>}/>
+      <Route path='/courses/readmore' element={<Detailedcards/>}/>
+      <Route path='/courses/singlepage' element={<Course/>}/>
       <Route path='/editstaff/:id' element={<EditStaff/>}/>
       <Route path='/editcourse/:id' element={<EditCourse/>}/>
 

@@ -1,19 +1,24 @@
 import React from 'react'
 import '../assets/css/style.css'
 import pythoncourse from '../assets/images/coursepic.png'
+import HeaderMain from '../components/HeaderMain'
 
 const course = () => {
   return (
     
-    <div class="container">
-      <br/>
-      <h2 class="text-start">Python Programming</h2>
-      <button type="button" class="btn btn-danger float-start">Starts on 2023 May 15</button><br/><br/><br/>
+    <div className='singlepage'>
+      <HeaderMain/><br/><br/>
       <div class="row">
-        <div class="col-md-8">
-          <img src={pythoncourse} alt="python course pic" class="float-start" width="800" height="450"/>
+          <h1>Cyber Security Analyst</h1>
+        <div class="firstbtn row">
+          <h1><button class="rounded-pill btn btn-danger">Starts on 2023 May 15</button></h1>
         </div>
-        <div class="col-md 3">
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+          <img src={pythoncourse} alt="python course pic" class="float-start" width="1000" height="450"/>
+        </div>
+        <div class="col-md 5">
           <div class="side-info mt-5">
             <button type = "button" class = "btn btn-outline-primary btn-lg fw-medium">8000 INR+GST</button><br/><br/>
             <span class="badge rounded-pill text-bg-success fs-5 fw-normal">OPEN</span><br/><br/>

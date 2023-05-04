@@ -370,7 +370,10 @@ body{
 
 
 .course-container {
-    padding: 5rem;
+    padding-bottom: 6rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    padding-top: 4rem;
 }
 
 .course-box{
@@ -386,3 +389,16 @@ body{
     margin-right: 2rem;
     margin-top: 1rem;
 } */
+
+.singlepage img{
+    padding-left: 15rem;
+    padding-top: 3rem;
+}
+
+.coursename h1{
+    padding-left: 15rem;
+}
+
+.singlepage .firstbtn button{
+    width:20%;
+}

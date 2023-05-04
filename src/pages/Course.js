@@ -2,6 +2,7 @@ import React from 'react'
 import '../assets/css/style.css'
 import pythoncourse from '../assets/images/coursepic.png'
 import HeaderMain from '../components/HeaderMain'
+import Footer from '../components/Footer'
 
 const course = () => {
   return (
@@ -108,7 +109,7 @@ const course = () => {
                         <li class="text-start">Engineering or science graduates / three-year diploma holders in any engineering branches, final year/pre-final year students of these courses, having a foundation level knowledge (plus two equivalent) in Mathematics and Computer fundamental skills.</li>
                         <li class="text-start">Students who have completed their graduation but are awaiting the final results can also apply. </li>
                       </ul>
-                      <p class="text-start">*Please note that the ICT Academy of Kerala will have the right to cancel the candidature at any point if found ineligible.</p>
+                      <p class="text-start"><i>*Please note that the ICT Academy of Kerala will have the right to cancel the candidature at any point if found ineligible.</i></p>
                     </div>
                   </div>
                 </div>
@@ -139,12 +140,11 @@ const course = () => {
                   </h2>
                   <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
+                      <p><strong>8,000 INR + 18% GST</strong></p>
                       <ul>
-                        <li class="text-start">Suitable for graduates and working professionals.</li>
-                        <li class="text-start">75% scholarship for meritorious candidates (Keralites). </li>
-                        <li class="text-start">Access to 14000+ LinkedIn courses.</li>
-                        <li class="text-start">Employability skills training.</li>
-                        <li class="text-start">Virtual Internship.</li>
+                        <li class="text-start">The candidates who score 61% and above on the admission test shall be eligible for the scholarship, provided they are unemployed. 
+                          All eligible candidates will receive 75% of their total fee as a scholarship.</li>
+                        <li class="text-start">Candidates who are taking admission on regular mode (without scholarship) receive 20% of cashback once they complete the course successfully.</li>
                       </ul> 
                     </div>
                   </div>
@@ -153,7 +153,8 @@ const course = () => {
             </div>
           </div>
         </div>
-      </div> 
+      </div>
+      <Footer/> 
     </div>
   )
 }

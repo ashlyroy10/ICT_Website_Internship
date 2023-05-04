@@ -17,8 +17,8 @@ const HeaderMain = () => {
           </svg>
           </Link>
           </div>
-          <Link to={'/what_we_do'} className='navlink link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover' >What We Do</Link>
-          <Link to={'/who_we_are'} className='navlink link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover' >Who We Are </Link>
+          <Link to={'/what_we_do/trainings'} className='navlink link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover' >What We Do</Link>
+          <Link to={'/who_we_are/about_us'} className='navlink link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover' >Who We Are </Link>
           <Link to={'/courses'}><button className='coursebutton btn btn-primary fw-bold'>Courses</button></Link>
         </div>
     </div>

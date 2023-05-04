@@ -11,11 +11,21 @@ import Adminlogin from './pages/Adminlogin';
 import AddCourse from './components/AddCourse';
 import AddStaff from './components/AddStaff';
 import AddTestimonial from './components/AddTestimonial';
-import SidePanel1 from './components/SidePanel1';
-import Why_ICT_Course from './pages/Why_ICT_Course';
 import EditStaff from './components/EditStaff';
 import EditCourse from './components/EditCourse';
 import Detailedcards from './components/Detailedcards';
+import AboutUs from './components/AboutUs';
+import ShareHolders from './components/ShareHolders';
+import Leaders from './components/Leaders';
+import Trainings from './components/Trainings';
+import Government from './components/Government';
+import Partner from './components/Partner';
+import Project from './components/Project';
+import OperatingUnit from './components/OperatingUnit';
+import Events from './components/Events';
+import Team from './components/Team';
+
+
 
 
 function App() {
@@ -27,8 +37,22 @@ function App() {
      
      <Routes>
       <Route exact path='/' element={<Home/>}/>
-      <Route path='/what_we_do' element={<WhatWeDo/>}/>
-      <Route path='/who_we_are' element={<WhoWeAre/>}/>
+      <Route path='/what_we_do' element={<WhatWeDo/>}>
+        <Route path='/what_we_do/trainings' element={<Trainings/>}/>
+        <Route path='/what_we_do/government_program' element={<Government/>}/>
+        <Route path='/what_we_do/partner_program' element={<Partner/>}/>
+        <Route path='/what_we_do/operating_units' element={<OperatingUnit/>}/>
+        <Route path='/what_we_do/projects' element={<Project/>}/>
+        <Route path='/what_we_do/events' element={<Events/>}/>
+      </Route>
+
+      <Route path='/who_we_are' element={<WhoWeAre/>}>
+        <Route path='/who_we_are/about_us' element={<AboutUs/>}/>
+        <Route path='/who_we_are/share_holders' element={<ShareHolders/>}/>
+        <Route path='/who_we_are/our_leaders' element={<Leaders/>}/>
+        <Route path='/who_we_are/our_team' element={<Team/>}/>
+      </Route>
+
       <Route path='/courses' element={<Coursesection/>}/>
       <Route path='/courses/readmore' element={<Detailedcards/>}/>
       <Route path='/courses/singlepage' element={<Course/>}/>

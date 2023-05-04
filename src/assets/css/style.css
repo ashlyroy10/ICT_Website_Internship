@@ -4,9 +4,10 @@
     padding: 0;
 }
 
-body {
-    background-color: #16d5c5;
-}
+/* body {
+    background: rgb(237,242,246);
+    background: linear-gradient(225deg, rgba(237,242,246,1) 10%, rgba(150,226,242,1) 64%, rgba(236,227,230,1) 100%);
+} */
 
 .header-admin .ictlogo {
     width: 250px;
@@ -36,12 +37,13 @@ body {
 }
 
 body{
-    background-color: #E7F2F8;
+    background: rgb(236,227,230);
+    background: linear-gradient(225deg, rgba(236,227,230,1) 0%, rgba(150,226,242,1) 100%);
 }
 
 .header-main{
-    background: rgb(151,171,255);
-    background: linear-gradient(35deg, rgb(203, 213, 255) 79%, rgb(192, 204, 239) 100%);;
+    background: rgb(169,208,215);
+background: linear-gradient(90deg, rgba(169,208,215,1) 0%, rgba(59,181,208,1) 100%, rgba(49,193,221,1) 100%, rgba(10,178,215,1) 100%, rgba(69,176,207,1) 100%);
     max-height: 100px;
     z-index: 1;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
@@ -76,8 +78,8 @@ body{
 }
 
 .sidepane{
-    background: rgb(151,171,255);
-    background: linear-gradient(150deg, rgba(151,171,255,1) 35%, rgba(18,53,151,1) 90%);
+    background: rgb(169,208,215);
+    background: linear-gradient(90deg, rgba(169,208,215,1) 0%, rgba(69,176,207,1) 100%);
     z-index: 0;
     text-align: center;
 }
@@ -220,8 +222,8 @@ body{
 
 .footer {
     /* position: absolute; */
-    background: rgb(150,226,242);
-    background: linear-gradient(225deg, rgba(150,226,242,1) 0%, rgba(214,222,227,1) 87%, rgba(231,223,226,1) 100%);
+    background: rgb(169,208,215);
+    background: linear-gradient(90deg, rgba(169,208,215,1) 100%, rgba(69,176,207,1) 100%);
     font-size: small;
     padding: 10px;
     right: 0;
@@ -374,6 +376,7 @@ body{
     padding-left: 6rem;
     padding-right: 6rem;
     padding-top: 4rem;
+    z-index: 0;
 }
 
 .course-box{
@@ -383,6 +386,7 @@ body{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: auto;
     padding: 2rem;
+    z-index: 0;
 }
 
 /* .course-box button{
@@ -401,4 +405,12 @@ body{
 
 .singlepage .firstbtn button{
     width:20%;
+}
+
+.accordion-header{
+    z-index: -1;
+}
+
+.single-courses-box:hover,.card1:hover{
+    background-color: #cfeaf0;
 }

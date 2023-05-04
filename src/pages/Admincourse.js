@@ -55,20 +55,19 @@ const Admincourse = () => {
 
       {/* Course in a Card */}
 
-      <div className="container bg-primary d-flex">
+      <div className="container d-flex">
         <div className="row">
-          <div className="col">
-              
-              
-              {courseList.map((value, index) => (
-                <div className="card mb-3" key={index}>
+        {courseList.map((value, index) => (
+          <div className="col">              
+                <div className="card h-100 mb-3" key={index}>
                 <div>
                   <div className="card-header bg-secondary text-white" >
                     <h5 className="card-title">{value.coursetitle}</h5>
                     <p></p>
                   </div>
 
-                  <img src={value.thumbImage} alt={value.title} />
+                  <img src={value.thumbImage} alt={value.title} /><br/>
+                  <button className="btn btn-warning">Change</button>
 
                   {/* ACCORDION */}
 
@@ -207,8 +206,9 @@ const Admincourse = () => {
                   </div>
                 </div>
             </div>
-              ))}
+             
           </div>
+           ))}
         </div>
       </div>
       <div></div>

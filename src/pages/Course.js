@@ -8,7 +8,7 @@ const course = () => {
   return (
     
     <div className='singlepage'>
-      <HeaderMain/><br/><br/>
+      <HeaderMain/>
       <div class="row">
           <h1>Cyber Security Analyst</h1>
         <div class="firstbtn row">

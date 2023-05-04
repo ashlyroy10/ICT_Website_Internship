@@ -46,7 +46,7 @@ const Adminlogin = () => {
       console.log('Login Successful');
       setauthenticated(true)
       localStorage.setItem("authenticated", true);
-      navigate('/admindashboard');
+      navigate('/admindashboard/course_details');
 
     } else {
       // login failed

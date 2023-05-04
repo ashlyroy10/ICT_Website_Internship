@@ -53,7 +53,7 @@ const EditCourse = () => {
     .catch((error)=>{
         console.log(error)
     })
-    navigate("/admindashboard");
+    navigate("/admindashboard/course_details");
 }
 
   return (

@@ -24,6 +24,9 @@ import Project from './components/Project';
 import OperatingUnit from './components/OperatingUnit';
 import Events from './components/Events';
 import Team from './components/Team';
+import AdminTestimonial from './pages/AdminTestimonial';
+import Adminstaff from './pages/Adminstaff';
+import Admincourse from './pages/Admincourse';
 
 
 
@@ -59,7 +62,11 @@ function App() {
       <Route path='/editstaff/:id' element={<EditStaff/>}/>
       <Route path='/editcourse/:id' element={<EditCourse/>}/>
 
-      <Route path='/admindashboard' element={<Admindashboard/>} />
+      <Route path='/admindashboard' element={<Admindashboard/>} >
+        <Route path='/admindashboard/course_details' element={<Admincourse/>}/>
+        <Route path='/admindashboard/staff_details' element={<Adminstaff/>}/>
+        <Route path='/admindashboard/testimonials' element={<AdminTestimonial/>}/>
+      </Route>
       <Route path='/adminlogin' element={<Adminlogin/>} />  
       <Route path='/admindashboard/addcourse' element={<AddCourse/>} />
       <Route path='/admindashboard/addstaff' element={<AddStaff/>} /> 

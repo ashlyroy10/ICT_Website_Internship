@@ -49,7 +49,7 @@ const EditStaff = () => {
         .catch((error)=>{
             console.log(error)
         })
-        navigate("/admindashboard");
+        navigate("/admindashboard/staff_details");
     }
 
     
@@ -112,7 +112,7 @@ const EditStaff = () => {
                 </div>
                 
                 <div class="mb-3">
-                    <button className='btn btn-success w-25'  onClick={updatestaff} disabled={isButtonDisabled}>Save</button>
+                <button className='btn btn-success w-25'  onClick={updatestaff} disabled={isButtonDisabled}>Save</button>
                 </div>
                 </form>
                 </div>

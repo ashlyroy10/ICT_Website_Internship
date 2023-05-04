@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Adminheader from './Adminheader'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, } from 'react-router-dom'
 import { ValidateStaff } from './Validate';
 import axios from 'axios';
 
 const AddStaff = () => {
+
 
     const [staffDetails, setStaffDetails] = useState({
         staffname: '',
@@ -17,7 +18,8 @@ const AddStaff = () => {
     let [errors, setErrors] = useState({});
     let [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
-    
+    const navigate = useNavigate();
+
     //Validation
     function handleInput(event) {
         event.preventDefault();
@@ -54,12 +56,12 @@ const AddStaff = () => {
         console.log("in input staff try section")
         const response = await axios.post("/addstaff", formData);        
         alert(`${response.data.staffname} Added to Database`);        
-        // window.location.reload();
-        
+        navigate("/admindashboard/staff_details"); 
       } catch (error) {
         console.log(error);
         alert("Error adding staff member");
-      } 
+      }
+      
     };
     
     
@@ -121,7 +123,7 @@ const AddStaff = () => {
                 </div>
                 
                 <div class="mb-3">
-                    <button className='btn btn-success w-25' onClick={inputstaff} disabled={isButtonDisabled}>Save</button>
+                <Link to={'/admindashboard/staff_details'}><button className='btn btn-success w-25' onClick={inputstaff} disabled={isButtonDisabled}>Save</button></Link>
                 </div>
                 </form>
                 </div>

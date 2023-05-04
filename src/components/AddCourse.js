@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Adminheader from './Adminheader'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { ValidateCourse } from './Validate';
 import axios from 'axios';
 
@@ -24,6 +24,7 @@ const AddCourse = () => {
     })
 
     let [errors, setErrors] = useState({});
+    const navigate = useNavigate();
 
     function handleInput(event) {
         event.preventDefault();
@@ -41,7 +42,7 @@ const AddCourse = () => {
       const response = await axios.post("/addcourse", courseDetails);
       //console.log(response);
       alert(`${response.data.coursetitle} Added to Database`);
-      window.location.reload();
+      navigate("/admindashboard/course_details"); 
     } catch (error) {
       //console.log(error);
       alert("Error adding staff member");

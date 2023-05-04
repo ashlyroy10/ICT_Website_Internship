@@ -55,8 +55,8 @@ const Admincourse = () => {
 
       {/* Course in a Card */}
 
-      <div className="container border-0">
-        <div className="row row-cols-1 row-cols-md-2 g-4">
+      <div className="container bg-primary d-flex">
+        <div className="row">
           <div className="col">
               
               
@@ -102,7 +102,7 @@ const Admincourse = () => {
                           data-bs-toggle="collapse"
                           data-bs-target={`#flush-collapseTwo${index}`}
                           aria-expanded="false"
-                          aria-controls={`flush-collapseOTwo${index}`}
+                          aria-controls={`flush-collapseTwo${index}`}
                         >
                           Description
                         </button>
@@ -129,16 +129,14 @@ const Admincourse = () => {
                         </button>
                       </h2>
                       <div
-                        id={`#flush-collapseThree${index}`}
+                        id={`flush-collapseThree${index}`}
                         className="accordion-collapse collapse"
                         data-bs-parent={`#accordianParent${index}`}
                       >
                         <div className="accordion-body">
-                          <small className="text-muted">
-                            <p>Course Duration: {value.duration} hours</p>
+                          <p>Duration: {value.duration} hours</p>
                             <p>Internship: {value.internship} hours</p>
-                            <p>Fee: INR {value.fee} (minus GST)</p>
-                          </small>
+                          <h3>Fee: INR {value.fee} without GST</h3>
                         </div>
                       </div>
                     </div>

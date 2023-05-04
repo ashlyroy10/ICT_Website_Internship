@@ -3,12 +3,24 @@ import axios from "axios";
 import { Link } from 'react-router-dom'
 
 
+
 const Adminstaff = () => {
 
   var [staffList, setStafflist] = useState([]);
-  let filepath = ""
+
+  const filepath = "http://localhost:5000/uploads/";
+
+  // const [imagePath, setPath] = useState('');
 
   useEffect(() => {
+    // axios
+    //   .get("/allstaff")
+    //   .then((response) => {
+    //     setStafflist((staffList = response.data));
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
 
     async function fetchData() {
       try {
@@ -19,6 +31,8 @@ const Adminstaff = () => {
       }
     }
     fetchData();
+
+   
   }, []);
 
   //To delete one entry
@@ -36,6 +50,11 @@ const Adminstaff = () => {
       }
     }
   };
+
+  //To upload new profile pic
+  const uploadStaffPhoto = async () => {
+
+  }
 
 
   return (
@@ -72,11 +91,12 @@ const Adminstaff = () => {
         <tbody>
         {staffList.map((value, index) => (
             <tr key={index}>
-              <td>{index+1}</td>
-              <td>{value.staffname}</td>
-              <td><img src={value.photo} alt={value.staffname} /></td>
-              <td>{value.designation}</td>
-              <td>{value.department}</td>
+              <td className='align-middle'>{index+1}</td>
+              <td className='align-middle'>{value.staffname}</td>
+              <td className='align-middle'><img src={filepath+value.photo} alt={value.staffname} width="80px" />
+              <br/><button className='btn btn-warning'>change</button></td>
+              <td className='align-middle'>{value.designation}</td>
+              <td className='align-middle'>{value.department}</td>
               <td>
                 <Link to={`/editstaff/${value._id}`}><button className='btn btn-success mx-1'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">

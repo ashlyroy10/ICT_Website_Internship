@@ -5,7 +5,7 @@ import hlogo from "../assets/images/hlogo.svg";
 
 const HeaderMain = () => {
   return (
-    <div>
+    <div className="header-main w-100">
       {/* Link to admin Login */}
       <div className="navlinks text-end fw-bold">
         <Link to={"/adminlogin"}>
@@ -48,7 +48,7 @@ const HeaderMain = () => {
                   to={"/what_we_do/trainings"}
                   className="navlink link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
                 >
-                  What We Do
+                  <button className="btn btn-light rounded-pill">What We Do</button>
                 </Link>
               </li>
               <li class="nav-item">
@@ -56,12 +56,12 @@ const HeaderMain = () => {
                   to={"/who_we_are/about_us"}
                   className="navlink link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
                 >
-                  Who We Are
+                  <button className="btn btn-light rounded-pill">Who We Are</button>
                 </Link>
               </li>
               <li class="nav-item">
                 <Link to={"/courses"}>
-                  <button className="coursebutton btn btn-primary fw-bold">
+                  <button className="coursebutton btn fw-bold">
                     Courses
                   </button>
                 </Link>

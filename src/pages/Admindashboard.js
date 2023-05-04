@@ -69,6 +69,11 @@ window.addEventListener('keydown', clearTimer);
       
       <div>
         <Adminheader />
+        <div className="side-menu-toggle">
+          <div className="hamburger">
+            <span></span>
+          </div>
+        </div>
 
         {/* Sidepane starts here */}
         <div className="dash-body d-flex justify-content-between font-link">

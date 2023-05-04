@@ -18,7 +18,6 @@ const Intropart = () => {
 
         </div>
         <div class="col-md-6 p2">
-            <br/>
         <img src={Intropic}  alt="intropic of ICT" width="550" height="400"/>
         {/* <img src={Intropic}  alt="intropic of ICT" width="500" height="350" class="animationpic"/> */}
         </div>

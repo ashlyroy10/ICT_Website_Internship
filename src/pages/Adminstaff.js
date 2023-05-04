@@ -6,16 +6,9 @@ import { Link } from 'react-router-dom'
 const Adminstaff = () => {
 
   var [staffList, setStafflist] = useState([]);
+  let filepath = ""
 
   useEffect(() => {
-    // axios
-    //   .get("/allstaff")
-    //   .then((response) => {
-    //     setStafflist((staffList = response.data));
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
 
     async function fetchData() {
       try {

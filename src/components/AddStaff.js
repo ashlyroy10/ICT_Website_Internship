@@ -8,10 +8,11 @@ const AddStaff = () => {
 
     const [staffDetails, setStaffDetails] = useState({
         staffname: '',
-        photo: '',
+        photo:'',
         designation:'',
         department:''
     })
+    // const [photo, setPhoto] = useState(null);
 
     let [errors, setErrors] = useState({});
     let [isButtonDisabled, setIsButtonDisabled] = useState(true);
@@ -20,9 +21,15 @@ const AddStaff = () => {
     //Validation
     function handleInput(event) {
         event.preventDefault();
-        const staffObj = {...staffDetails, [event.target.name]:event.target.value}
+        const staffObj = {...staffDetails, [event.target.name]:event.target.value}    
         setStaffDetails(staffObj)
-        setErrors(ValidateStaff(staffObj))       
+        setErrors(ValidateStaff(staffObj))               
+    }
+
+    function handleStaffPhoto(event) {
+      // setPhoto(event.target.files[0]);
+      console.log(event.target.files[0]);
+      setStaffDetails({...staffDetails, photo:event.target.files[0]})
     }
 
      //Checking Errros
@@ -36,18 +43,23 @@ const AddStaff = () => {
 
     //insert function
     const inputstaff = async (e) => {
-      e.preventDefault();
-      console.log(staffDetails);
-    
+      console.log("in input staff")
+      const formData = new FormData();
+      formData.append('photo', staffDetails.photo, staffDetails.photo.name)
+      formData.append('staffname', staffDetails.staffname)
+      formData.append('designation', staffDetails.designation)
+      formData.append('department', staffDetails.department)
+      console.log(formData)
       try {
-        const response = await axios.post("/addstaff", staffDetails);
-        //console.log(response);
-        alert(`${response.data.staffname} Added to Database`);
-        window.location.reload();
+        console.log("in input staff try section")
+        const response = await axios.post("/addstaff", formData);        
+        alert(`${response.data.staffname} Added to Database`);        
+        // window.location.reload();
+        
       } catch (error) {
-        //console.log(error);
+        console.log(error);
         alert("Error adding staff member");
-      }
+      } 
     };
     
     
@@ -75,7 +87,7 @@ const AddStaff = () => {
             </div>
             <hr />
                 <div className='form-box w-50'>
-                <form>
+                <form encType="multipart/form-data">
                 <div class="mb-3">
                     <input type="text" class="form-control" id="sname" name='staffname' onChange={handleInput} placeholder='Name' maxLength={30}/>
                     {<p style={{color:"red"}}>{errors.staffname}</p>}
@@ -83,7 +95,7 @@ const AddStaff = () => {
 
                 <div class="mb-3">
                     <label for="sImage" class="form-label">Upload Photo</label>
-                    <input class="form-control" type="file" id="sImage" name='photo' onChange={handleInput} placeholder='Upload Photo' />
+                    <input class="form-control" type="file" id="sImage" name='photo' onChange={handleStaffPhoto} placeholder='Upload Photo' />
                     
                 </div>
 

@@ -25,7 +25,6 @@ const EditCourse = () => {
         startdate: '',
         enddate: '',
         cstatus: ''
-
     });
     const { coursetitle, coursetype, overview, description, duration, internship, fee, cmode, startdate, enddate, cstatus} = newcourse;
 

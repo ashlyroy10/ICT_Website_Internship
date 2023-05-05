@@ -112,8 +112,6 @@ const AddCourse = () => {
                     <option value="mcr">Microskill Programs</option>
                     <option value="shr">Short Term Programs</option>
                     <option value="aop">Add-on Programs</option>
-                    <option value="tin">Training with Internship</option>
-                    <option value="wen">Workforce Enablement Programs</option>
                   </select>
                   {<p style={{color:"red"}}>{errors.coursetype}</p>}
 

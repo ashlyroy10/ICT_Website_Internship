@@ -3,8 +3,11 @@ import '../assets/css/style.css'
 import pythoncourse from '../assets/images/coursepic.png'
 import HeaderMain from '../components/HeaderMain'
 import Footer from '../components/Footer'
+import { useParams } from 'react-router-dom'
 
-const course = () => {
+const Course = () => {
+    
+  let { id } = useParams()
   return (
     
     <div className='singlepage'>
@@ -159,4 +162,4 @@ const course = () => {
   )
 }
 
-export default course
+export default Course

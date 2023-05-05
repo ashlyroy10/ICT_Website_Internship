@@ -43,13 +43,6 @@ const Adminstaff = () => {
     }
   };
 
-  //To upload new profile pic
-  const uploadStaffPhoto = async () => {
-
-    
-
-  }
-
 
   return (
     <div>

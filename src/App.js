@@ -60,8 +60,10 @@ function App() {
       </Route>
 
       <Route path='/courses' element={<Coursesection/>}/>
-      <Route path='/courses/readmore' element={<Detailedcards/>}/>
-      <Route path='/courses/singlepage' element={<Course/>}/>
+      <Route path='/courses/:code' element={<Detailedcards/>}/>
+      <Route path='/courses/:code/:id' element={<Course/>}/>
+    
+      
       <Route path='/editstaff/:id' element={<EditStaff/>}/>
       <Route path='/editcourse/:id' element={<EditCourse/>}/>
       <Route path='/edittestimonial/:id' element={<EditTestimonial/>}/>

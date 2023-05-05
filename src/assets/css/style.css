@@ -519,3 +519,8 @@ body{
     width: 540px;
     margin-left: 220px;
 }
+
+.teamcard{
+    max-width: 500px;
+    max-height: 600px;
+}

@@ -8,7 +8,7 @@ const Adminstaff = () => {
 
   var [staffList, setStafflist] = useState([]);
 
-  const filepath = "http://localhost:5000/uploads/";
+  const filepath = "http://localhost:5000/uploads/staffprofile/";
 
   // const [imagePath, setPath] = useState('');
 

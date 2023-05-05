@@ -17,7 +17,7 @@ const Adminstaff = () => {
     async function fetchData() {
       try {
         const response = await axios.get("/allstaff");
-        setStafflist(response.data);
+        setStafflist(response.data);        
       } catch (error) {
         console.log(error);
       }
@@ -46,8 +46,11 @@ const Adminstaff = () => {
   //To upload new profile pic
   const uploadStaffPhoto = async () => {
 
+<<<<<<< Updated upstream
     
 
+=======
+>>>>>>> Stashed changes
   }
 
 

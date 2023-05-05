@@ -4,8 +4,13 @@
     padding: 0;
 }
 
+<<<<<<< Updated upstream
 .header-admin .ictlogo {
     width: 250px;
+=======
+body {
+    background-color: #edeeee;
+>>>>>>> Stashed changes
 }
 
 .login-container {
@@ -13,6 +18,7 @@
     padding: 4rem;
 }
 
+<<<<<<< Updated upstream
 .login-box{
     width: 40%;
     height: 50%;
@@ -27,14 +33,19 @@
     height: calc(100%-100px);
 }
 
+=======
+>>>>>>> Stashed changes
 .font-link{
     font-family: 'Poppins', sans-serif;
 }
 
+<<<<<<< Updated upstream
 body{
     background: rgb(236,227,230);
     background: linear-gradient(225deg, rgba(236,227,230,1) 0%, rgba(150,226,242,1) 100%);
 }
+=======
+>>>>>>> Stashed changes
 
 .header-main .navlink .btn{
     width: 10rem;

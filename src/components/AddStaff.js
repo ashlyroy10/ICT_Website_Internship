@@ -56,12 +56,21 @@ const AddStaff = () => {
         console.log("in input staff try section")
         const response = await axios.post("/addstaff", formData);        
         alert(`${response.data.staffname} Added to Database`);        
+<<<<<<< Updated upstream
         navigate("/admindashboard/staff_details"); 
       } catch (error) {
         console.log(error);
         alert("Error adding staff member");
       }
       
+=======
+        // window.location.reload();
+        
+      } catch (error) {
+        console.log(error);
+        alert("Error adding staff member");
+      } 
+>>>>>>> Stashed changes
     };
     
     

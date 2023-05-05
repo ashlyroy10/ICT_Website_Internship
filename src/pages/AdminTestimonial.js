@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios";
 
 const AdminTestimonial = () => {
-  var [testimonialList, setTestimonialList] = useState([]);
+  let [testimonialList, setTestimonialList] = useState([]);
   const filepath = "http://localhost:5000/uploads/testimonialphoto/";
 
   useEffect(() => {

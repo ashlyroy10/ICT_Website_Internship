@@ -8,8 +8,8 @@ const Government = () => {
       <br/><br/>
       <div className='govern'>
         <div className='row'>
-          <div className='col-3'><img src={GCBP} class="rounded float-start" alt="img"/></div>
-          <div className='col-9 pt-3'>
+          <div className='col-md-3  '><img src={GCBP} class="rounded float-start img-fluid" alt="img"/></div>
+          <div className='col-md-9  pt-3'>
             <h1>Government Capacity Building Programme</h1>
             <p>ICT Academy has partnered with KSITM for a capability building programme for Govt. 
               Employees and Akshaya Entrepreneurs and with ASAP in the IT/ITeS skill sector for the last four years (since 2014) and have trained 3000+ students (100+ batches) in NSDC (NSQF aligned) certificate courses.</p>

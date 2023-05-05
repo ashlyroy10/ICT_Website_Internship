@@ -8,7 +8,7 @@ const SidePanel1 = () => {
     <div>
       <div className='container-fluid d-flex'> 
         <div className='row'>
-          <div className='sidepane col-2 vh-100 sticky-lg-top'>
+          <div className='sidepane col-lg-2 col-md-2 col-sm-2 col-12 vh-100 sticky-lg-top'>
             <ul className='nav nav-tabs my-2' id="myTab" role="tablist">
               <li className="nav-item" role="presentation">
               <Link to={'/who_we_are/about_us'}><button className="sidebtn fw-bold btn nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about-tab-pane" type="button" role="tab" aria-controls="about-tab-pane" aria-selected="true">About Us</button></Link>
@@ -26,7 +26,7 @@ const SidePanel1 = () => {
             
           </div>
           
-          <div className="col-10">
+          <div className="col-lg-10 col-md-10 col-sm-10 col-0">
             <div className="tab-content flex-grow-1" id="myTabContent">
               <div className="tab-pane fade show active" id="about-tab-pane" role="tabpanel" aria-labelledby="about-tab" tabindex="0"><Outlet/></div>
               <div className="tab-pane fade" id="share-tab-pane" role="tabpanel" aria-labelledby="share-tab" tabindex="0"><Outlet/></div>

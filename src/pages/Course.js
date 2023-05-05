@@ -17,9 +17,9 @@ const course = () => {
       </div>
       <div class="row">
         <div class="col-md-5">
-          <img src={pythoncourse} alt="python course pic" class="float-start" width="1000" height="450"/>
+          <img src={pythoncourse} alt="python course pic" class="float-start" width="850px" height="450"/>
         </div>
-        <div class="col-md 5">
+        <div class="col-md-7">
           <div class="side-info mt-5">
             <button type = "button" class = "btn btn-outline-primary btn-lg fw-medium">8000 INR+GST</button><br/><br/>
             <span class="badge rounded-pill text-bg-success fs-5 fw-normal">OPEN</span><br/><br/>

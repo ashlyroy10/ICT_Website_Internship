@@ -13,7 +13,7 @@ const Detailedcards = () => {
     <div class="card1 h-100 border border-light-subtle rounded-3 border-4">
       <img src={coursedp} class="card-img-top" alt="..."/>
       <div class="card-body p-3">
-      <Link to={'/courses/singlepage'}><h5 class="card-title">Python Programming</h5></Link>
+      <Link to={'/courses/singlepage'}><h6 class="card-title">Python Programming</h6></Link>
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@ const Detailedcards = () => {
     <div class="card1 h-100 border border-light-subtle rounded-3 border-4">
       <img src={coursedp} class="card-img-top" alt="..."/>
       <div class="card-body p-3">
-      <Link to={'/courses/singlepage'}><h5 class="card-title">Python Programming</h5></Link>
+      <Link to={'/courses/singlepage'}><h6 class="card-title">Python Programming</h6></Link>
       </div>
     </div>
   </div>
@@ -29,7 +29,7 @@ const Detailedcards = () => {
     <div class="card1 h-100 border border-light-subtle rounded-3 border-4">
       <img src={coursedp} class="card-img-top" alt="..."/>
       <div class="card-body p-3">
-      <Link to={'/courses/singlepage'}><h5 class="card-title">Python Programming</h5></Link>
+      <Link to={'/courses/singlepage'}><h6 class="card-title">Python Programming</h6></Link>
       </div>
     </div>
   </div>
@@ -37,7 +37,7 @@ const Detailedcards = () => {
     <div class="card1 h-100 border border-light-subtle rounded-3 border-4">
       <img src={coursedp} class="card-img-top" alt="..."/>
       <div class="card-body p-3">
-      <Link to={'/courses/singlepage'}><h5 class="card-title">Python Programming</h5></Link>
+      <Link to={'/courses/singlepage'}><h6 class="card-title">Python Programming</h6></Link>
       </div>
     </div>
   </div>
@@ -45,7 +45,7 @@ const Detailedcards = () => {
     <div class="card1 h-100 border border-light-subtle rounded-3 border-4">
       <img src={coursedp} class="card-img-top" alt="..."/>
       <div class="card-body p-3">
-      <Link to={'/courses/singlepage'}><h5 class="card-title">Python Programming</h5></Link>
+      <Link to={'/courses/singlepage'}><h6 class="card-title">Python Programming</h6></Link>
       </div>
     </div>
   </div>
@@ -53,7 +53,7 @@ const Detailedcards = () => {
     <div class="card1 h-100 border border-light-subtle rounded-3 border-4">
       <img src={coursedp} class="card-img-top" alt="..."/>
       <div class="card-body p-3">
-      <Link to={'/courses/singlepage'}><h5 class="card-title">Python Programming</h5></Link>
+      <Link to={'/courses/singlepage'}><h6 class="card-title">Python Programming</h6></Link>
       </div>
     </div>
   </div>

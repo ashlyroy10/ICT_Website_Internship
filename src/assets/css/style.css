@@ -391,7 +391,7 @@ body{
 }
 
 .card1{
-    max-width: 540px;
+    max-width: 340px;
 }
 
 .card-custom1{
@@ -485,5 +485,5 @@ body{
 }
 
 .single-courses-box:hover,.card1:hover{
-    background-color: #cfeaf0;
+    background-color: whitesmoke;
 }

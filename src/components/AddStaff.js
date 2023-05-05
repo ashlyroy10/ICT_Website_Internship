@@ -123,7 +123,7 @@ const AddStaff = () => {
                 </div>
                 
                 <div class="mb-3">
-                <Link to={'/admindashboard/staff_details'}><button className='btn btn-success w-25' onClick={inputstaff} disabled={isButtonDisabled}>Save</button></Link>
+                <button className='btn btn-success w-25' onClick={inputstaff} disabled={isButtonDisabled}>Save</button>
                 </div>
                 </form>
                 </div>

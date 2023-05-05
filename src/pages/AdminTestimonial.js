@@ -31,7 +31,7 @@ const AdminTestimonial = () => {
           </div>
 
           <div className='col-6'>
-            <h5>Course Details</h5>
+            <h5>Testimonials</h5>
           </div>          
         </div>
         

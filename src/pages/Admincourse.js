@@ -50,7 +50,7 @@ const Admincourse = () => {
           </div>
 
           <div className="col-6">
-            <h5>Course Details</h5>
+            <h2>Course Details</h2>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@ const Admincourse = () => {
       {/* Course in a Card */}
 
       <div className="container d-flex">
-        <div className="row">
+        <div className="row row-cols-md-3">
         {courseList.map((value, index) => (
           <div className="col">              
                 <div className="card h-100 mb-3" key={index}>

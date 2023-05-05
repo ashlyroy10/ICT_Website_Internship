@@ -105,7 +105,7 @@ const AddTestimonial = () => {
                 </div>
 
                 <div class="mb-3">
-                    <button className='btn btn-success w-25' type='submit' onChange={inputtestimonial}>Save</button>
+                    <button className='btn btn-success w-25 form-control' type='submit' onClick={inputtestimonial}>Save</button>
                 </div>
                 </form>
                 </div>

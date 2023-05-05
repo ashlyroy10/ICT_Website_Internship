@@ -2,9 +2,11 @@ import React from "react";
 //import'./Footer.css'
 let Footer = () =>{
     return<div className="footer">
+        <div className="row row-cols">
         <p>GF-1 Thejaswini Building, Technopark Rd, Thiruvananthapuram, Kerala 695581 </p>
-    <p>ICT Academy of Kerala is supported by Govt. of India , partnered by Govt. of Kerala and the IT industry.</p>
-    <p><b>Copyright © 2022 ICT Academy of Kerala.  All rights reserved.</b></p>
+        <p>ICT Academy of Kerala is supported by Govt. of India , partnered by Govt. of Kerala and the IT industry.</p>
+        <p><b>Copyright © 2022 ICT Academy of Kerala.  All rights reserved.</b></p>
+        </div>
 
     
 

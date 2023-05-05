@@ -44,7 +44,7 @@ const AddCourse = () => {
     e.preventDefault();
     console.log(courseDetails);
 
-    console.log("in input course")
+    
       const formData = new FormData();
       formData.append('thumbImage', courseDetails.thumbImage, courseDetails.thumbImage.name)
       formData.append('coursetitle', courseDetails.coursetitle)

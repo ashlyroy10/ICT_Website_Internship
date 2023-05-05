@@ -57,20 +57,11 @@ const Admincourse = () => {
 
       {/* Course in a Card */}
 
-<<<<<<< Updated upstream
       <div className="container d-flex">
         <div className="row">
         {courseList.map((value, index) => (
           <div className="col">              
                 <div className="card h-100 mb-3" key={index}>
-=======
-      <div className="row bg-primary d-flex">
-        <div className="justify-content-evenly">
-          <div className="col-6">              
-              
-              {courseList.map((value, index) => (
-                <div className="card mb-3" key={index}>
->>>>>>> Stashed changes
                 <div>
                   <div className="card-header bg-secondary text-white" >
                     <h5 className="card-title">{value.coursetitle}</h5>
@@ -146,11 +137,7 @@ const Admincourse = () => {
                       >
                         <div className="accordion-body">
                           <p>Duration: {value.duration} hours</p>
-<<<<<<< Updated upstream
                             <p>Internship: {value.internship} hours</p>
-=======
-                          <p>Internship: {value.internship} hours</p>
->>>>>>> Stashed changes
                           <h3>Fee: INR {value.fee} without GST</h3>
                         </div>
                         

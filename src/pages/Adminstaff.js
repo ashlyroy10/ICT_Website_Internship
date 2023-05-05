@@ -46,11 +46,8 @@ const Adminstaff = () => {
   //To upload new profile pic
   const uploadStaffPhoto = async () => {
 
-<<<<<<< Updated upstream
     
 
-=======
->>>>>>> Stashed changes
   }
 
 

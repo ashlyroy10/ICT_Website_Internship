@@ -25,8 +25,14 @@ const Home = () => {
       </span>
     </div>
 
+    <div className="course-container container font-link">
+            <div className="course-box bg-light">
+            <h1 className='pb-4'><strong>Popular Courses</strong></h1>
+            <Introcard/>
+            </div>
+    </div>
     <div className='row vh-50'>
-      <Introcard/>
+     
     </div>
 
     <div className='row'>

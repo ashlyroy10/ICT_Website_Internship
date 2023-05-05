@@ -45,7 +45,7 @@ const AddTestimonial = () => {
         //   }
         
         try {
-          console.log("in input testimonial try section")
+          console.log("in input testimonial try section");
           const response = await axios.post("/addtestimonial", formData);        
           alert(`${response.data.student_name} Added to Database`);        
           navigate("/admindashboard/testimonials"); 

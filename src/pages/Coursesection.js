@@ -9,7 +9,7 @@ const Coursesection = () => {
   return (
     <div>
         <HeaderMain/>
-                <section className='courses mt-5 mb-5'>
+                <section className='courses mt-3 mb-5'>
                     <div className='container'>
                         <div className='row'>
                             <h1 className='text-center'>Our Courses</h1>

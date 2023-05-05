@@ -175,13 +175,44 @@ body{
         background-color: #E5FDD1;
         
     }
+
+    .carousel-item img {
+        height: 500px;
+        max-width: 60%;
+      }
+    
 }
+
+@media (min-width: 992px) {
+    .carousel-item img {
+      height: 600px;
+      max-width: 50%;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .carousel-item img {
+      height: 700px;
+      max-width: 40%;
+    }
+  }
 
 /* for small devices */
 @media (max-width: 576px) {
     .login-box {
         width: 100%;
     }
+
+    .carousel-item img {
+        height: 400px;
+        max-width: 75%;
+      }
+
+      .intro-pic {
+        display: none;
+        width: 0px;
+        height: 0px;
+      }
 }
 
 /* Vijay Style */
@@ -272,12 +303,7 @@ body{
     padding-bottom: 10px;
     bottom: 0;
     text-align: center;
-    z-index: 1;
-       
-  }
-  
-  .footer p{
-    line-height: 0.5;
+    z-index: 1;       
   }
   
   .image-div img{
@@ -316,6 +342,12 @@ body{
   .p2 button:hover {
     background: #209dd8;
   }
+
+  .carousel-item img {
+    height: auto;
+    max-width: 100%;
+  }
+  
 
   /*Added extra for prev, next arrow color*/
   .carousel-control-prev-icon {

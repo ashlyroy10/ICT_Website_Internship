@@ -63,10 +63,6 @@ export function ValidateCourse(values){
         errors.thumbImage = "Thumbnail is Mandatory"
     }
 
-    if(values.syllabusfile === "") {
-        errors.syllabusfile = "Syllabus is Mandatory"
-    }
-
     if(values.cmode === "") {
         errors.cmode = "Cannot be Empty"
     } 
@@ -120,7 +116,7 @@ export function ValidateTestimonials(values){
     
     let errors = {};
 
-    const testimonial_pattern = /^(?!\s)[\s\S]{0,99}$/
+    const testimonial_pattern = /^(?:\S+\s+){0,749}\S+$/
     const student_name_pattern = /^[a-zA-Z]+([ \t]*[a-zA-Z]+){4,30}$/
     const course_pattern = /^[a-zA-Z0-9]+([ \t]*[a-zA-Z0-9.,]+){4,99}$/
     const batch_pattern = /^[a-zA-Z0-9][a-zA-Z0-9\s]{0,98}[a-zA-Z0-9]$/

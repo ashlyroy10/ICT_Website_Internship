@@ -33,20 +33,42 @@ const AddCourse = () => {
         setErrors(ValidateCourse(courseObj))
     }
 
+    function handleCourseThumb(event) {
+        
+        console.log(event.target.files[0]);
+        setCourseDetails({...courseDetails, thumbImage:event.target.files[0]})
+      }
+
    //insert function
    const inputcourse = async (e) => {
     e.preventDefault();
     console.log(courseDetails);
+
+    console.log("in input course")
+      const formData = new FormData();
+      formData.append('thumbImage', courseDetails.thumbImage, courseDetails.thumbImage.name)
+      formData.append('coursetitle', courseDetails.coursetitle)
+      formData.append('coursetype', courseDetails.coursetype)
+      formData.append('overview', courseDetails.overview)
+      formData.append('description', courseDetails.description)
+      formData.append('duration', courseDetails.duration)
+      formData.append('internship', courseDetails.internship)
+      formData.append('fee', courseDetails.fee)
+      formData.append('cmode', courseDetails.cmode)
+      formData.append('startdate', courseDetails.startdate)
+      formData.append('enddate', courseDetails.enddate)
+      formData.append('cstatus', courseDetails.cstatus)
+      console.log(formData)
+      try {
+        console.log("in input course try section")
+        const response = await axios.post("/addcourse", formData);        
+        alert(`${response.data.coursetitle} Added to Database`);        
+        navigate("/admindashboard/course_details"); 
+      } catch (error) {
+        console.log(error);
+        alert("Error adding course");
+      }
   
-    try {
-      const response = await axios.post("/addcourse", courseDetails);
-      //console.log(response);
-      alert(`${response.data.coursetitle} Added to Database`);
-      navigate("/admindashboard/course_details"); 
-    } catch (error) {
-      //console.log(error);
-      alert("Error adding staff member");
-    }
   };
 
   return (
@@ -73,7 +95,7 @@ const AddCourse = () => {
             <hr/>
             <div className='row d-flex justify-content-center'>
                 <div className='form-box w-50'>
-                <form>
+                <form encType="multipart/form-data">
 
                 <div class="mb-3">
                     <input type="text" class="form-control" name='coursetitle' id="coursetitle" placeholder='Course Title' onChange={handleInput} />
@@ -100,14 +122,8 @@ const AddCourse = () => {
                 <div class="mb-3 row">
                     <div className='col'>
                         <label for="thumbImage" class="form-label">Upload Thumbnail</label>
-                        <input class="form-control" type="file" name='thumbImage' id="thumbImage" placeholder='Upload Thumbnail' onChange={handleInput} />
+                        <input class="form-control" type="file" name='thumbImage' id="thumbImage" placeholder='Upload Thumbnail' onChange={handleCourseThumb} />
                         {<p style={{color:"red"}}>{errors.thumbImage}</p>}
-                    </div>
-
-                    <div className='col'>
-                        <label for="syllabusfile" class="form-label">Upload Syllabus</label>
-                        <input class="form-control" type="file" name='syllabusfile' id="syllabusfile" placeholder='Upload Syllabus' onChange={handleInput} />
-                        {<p style={{color:"red"}}>{errors.syllabusfile}</p>}
                     </div>
                 </div>
 

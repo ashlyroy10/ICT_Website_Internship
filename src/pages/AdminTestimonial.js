@@ -1,19 +1,21 @@
 import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
+import axios from "axios";
 
 const AdminTestimonial = () => {
   var [testimonialList, setTestimonialList] = useState([]);
+  const filepath = "http://localhost:5000/uploads/testimonialphoto/";
 
   useEffect(() => {
-    // async function fetchData() {
-    //   try {
-    //     const response = await axios.get("/allstaff");
-    //     setStafflist(response.data);
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // }
-    // fetchData();
+    async function fetchData() {
+      try {
+        const response = await axios.get("/alltestimonial");
+        setTestimonialList(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchData();
   }, []);
 
   return (
@@ -51,12 +53,12 @@ const AdminTestimonial = () => {
         <tbody>
           {testimonialList.map((testimonials, index) => (
             <tr key={index}>
-              <td>{index+1}</td>
-              <td>{testimonials.testimonial}</td>
-              <td>{testimonials.student_name}</td>
-              <td><img src={testimonials.student_photo} alt={testimonials.student_name} /></td>              
-              <td>{testimonials.course}</td>
-              <td>{testimonials.batch}</td>
+              <td className='align-middle'>{index+1}</td>
+              <td className='align-middle'>{testimonials.testimonial}</td>
+              <td className='align-middle'>{testimonials.student_name}</td>
+              <td className='align-middle'><img src={filepath+testimonials.student_photo} alt={testimonials.student_name} width="80px" /></td>              
+              <td className='align-middle'>{testimonials.course}</td>
+              <td className='align-middle'>{testimonials.batch}</td>
               <td></td>
             </tr>
           ))}

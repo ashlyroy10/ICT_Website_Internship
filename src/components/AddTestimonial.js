@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Adminheader from '../components/Adminheader';
 import { ValidateTestimonials } from './Validate';
+import axios from 'axios';
 
 const AddTestimonial = () => {
 
-    const [Testimonials, setTestimonials] = useState({
+    const [testimonials, setTestimonials] = useState({
         testimonial: '',
         student_name: '',
         student_photo: '',
@@ -14,13 +15,45 @@ const AddTestimonial = () => {
     })
 
     let [errors, setErrors] = useState({});
+    const navigate = useNavigate();
 
     function handleInput(event) {
         event.preventDefault();
-        const courseObj = {...Testimonials, [event.target.name]:event.target.value}
-        setTestimonials(courseObj)
-        setErrors(ValidateTestimonials(courseObj))
+        const newObj = {...testimonials, [event.target.name]:event.target.value}
+        setTestimonials(newObj)
+        setErrors(ValidateTestimonials(newObj))
     }
+
+    function handleTestimonialPhoto(event) {
+        // setPhoto(event.target.files[0]);
+        console.log(event.target.files[0]);
+        setTestimonials({...testimonials, student_photo:event.target.files[0]})
+      }
+
+    //insert function
+    const inputtestimonial = async (e) => {
+        console.log("in input testimonial")
+        const formData = new FormData();
+        formData.append('student_photo', testimonials.student_photo, testimonials.student_photo.name)
+        formData.append('testimonial', testimonials.testimonial)        
+        formData.append('student_name', testimonials.student_name)
+        formData.append('course', testimonials.course)
+        formData.append('batch', testimonials.batch)
+        console.log(formData)
+        
+        try {
+          console.log("in input testimonial try section")
+          const response = await axios.post("/addtestimonial",formData);        
+          alert(`${response.data.student_name} Added to Database`);        
+          navigate("/admindashboard/testimonials"); 
+        } catch (error) {
+          console.log(error);
+          alert("Error adding testimonial");
+        }
+        
+      };
+
+    
   return (
     <div>
         <Adminheader />
@@ -45,7 +78,7 @@ const AddTestimonial = () => {
             <hr/>
             <div className='row d-flex justify-content-center'>
                 <div className='form-box w-50'>
-                <form>
+                <form encType="multipart/form-data">
                 <div class="mb-3">
                     <input type="text" class="form-control" id="testimonial" name='testimonial' onChange={handleInput} placeholder='Testimonial' />
                     {<p style={{color:"red"}}>{errors.testimonial}</p>}
@@ -58,7 +91,7 @@ const AddTestimonial = () => {
 
                 <div class="mb-3">
                     <label for="student_photo" class="form-label">Upload Photo</label>
-                    <input class="form-control" type="file" id="student_photo" name='student_photo' onChange={handleInput} placeholder='Upload Photo' />
+                    <input class="form-control" type="file" id="student_photo" name='student_photo' onChange={handleTestimonialPhoto} placeholder='Upload Photo' />
                 </div>
 
                 <div class="mb-3">
@@ -72,7 +105,7 @@ const AddTestimonial = () => {
                 </div>
 
                 <div class="mb-3">
-                    <button className='btn btn-success w-25'>Save</button>
+                    <button className='btn btn-success w-25' type='submit' onChange={inputtestimonial}>Save</button>
                 </div>
                 </form>
                 </div>

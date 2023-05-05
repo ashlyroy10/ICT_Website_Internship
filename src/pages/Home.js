@@ -19,14 +19,15 @@ const Home = () => {
       <Intropart/>
     </div>
 
-    <div className='row d-flex vh-50'>
-      <span className='align-middle'>
+    <div className="home-container container font-link">
+            <div className="home-box bg-light">
+            <h1 className='pb-4'><strong>Testimonials</strong></h1>
         <Testimonialcarousel />
-      </span>
+      </div>
     </div>
 
-    <div className="course-container container font-link">
-            <div className="course-box bg-light">
+    <div className="home-container container font-link">
+            <div className="home-box bg-light">
             <h1 className='pb-4'><strong>Popular Courses</strong></h1>
             <Introcard/>
             </div>

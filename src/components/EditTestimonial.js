@@ -12,10 +12,10 @@ const EditTestimonial = () => {
         testimonial: '',
         student_name: '',
         student_photo: '',
-        course:'',
+        student_course:'',
         batch:''
     });
-    const { testimonial, student_name,student_photo, course, batch} = Testimonials;
+    const { testimonial, student_name, student_photo, student_course, batch} = Testimonials;
 
     const loadtestimonial = async () => {
         const result = await axios.get(`/gettestimonial/${id}`);
@@ -41,7 +41,7 @@ const EditTestimonial = () => {
       }, [errors]);
 
     //update function
-    const updatestaff = async e => {
+    const updatetestimonial = async e => {
         e.preventDefault();
         await axios.patch(`/updatetestimonial/${id}`, Testimonials)
         .then((response) => {
@@ -52,9 +52,6 @@ const EditTestimonial = () => {
         })
         navigate("/admindashboard/testimonials");
     }
-
-    
-
 
   return (
     <div>
@@ -91,14 +88,14 @@ const EditTestimonial = () => {
                     {<p style={{color:"red"}}>{errors.student_name}</p>}
                 </div>
 
-                <div class="mb-3">
+                {/* <div class="mb-3">
                     <label for="student_photo" class="form-label">Upload Photo</label>
                     <input class="form-control" type="file" id="student_photo" name='student_photo' value={student_photo} onChange={e => onInputChange(e)} placeholder='Upload Photo' />
-                </div>
+                </div> */}
 
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="course" name='course' value={course} onChange={e => onInputChange(e)} placeholder='Course' />
-                    {<p style={{color:"red"}}>{errors.course}</p>}
+                    <input type="text" class="form-control" id="student_course" name='student_course' value={student_course} onChange={e => onInputChange(e)} placeholder='Course' />
+                    {<p style={{color:"red"}}>{errors.student_course}</p>}
                 </div>
 
                 <div class="mb-3">
@@ -107,7 +104,7 @@ const EditTestimonial = () => {
                 </div>
 
                 <div class="mb-3">
-                    <button className='btn btn-success w-25' onClick={updatestaff} disabled={isButtonDisabled}>Save</button>
+                    <button className='btn btn-success w-25' onClick={updatetestimonial} disabled={isButtonDisabled}>Save</button>
                 </div>
                 </form>
                 </div>

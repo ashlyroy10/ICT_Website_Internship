@@ -135,11 +135,11 @@ export function ValidateTestimonials(values){
         errors.student_name = "Not in the right format"
     }
 
-    if(values.course === "") {
-        errors.course = "Cannot be Empty"
+    if(values.studentcourse === "") {
+        errors.studentcourse = "Cannot be Empty"
     } 
     else if(!course_pattern.test(values.course)){
-        errors.course = "Not in the right format"
+        errors.studentcourse = "Not in the right format"
     }
 
     if(values.batch === "") {

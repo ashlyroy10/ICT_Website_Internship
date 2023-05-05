@@ -27,6 +27,7 @@ import Team from './components/Team';
 import AdminTestimonial from './pages/AdminTestimonial';
 import Adminstaff from './pages/Adminstaff';
 import Admincourse from './pages/Admincourse';
+import EditTestimonial from './components/EditTestimonial';
 
 
 
@@ -63,6 +64,7 @@ function App() {
       <Route path='/courses/singlepage' element={<Course/>}/>
       <Route path='/editstaff/:id' element={<EditStaff/>}/>
       <Route path='/editcourse/:id' element={<EditCourse/>}/>
+      <Route path='/edittestimonial/:id' element={<EditTestimonial/>}/>
 
       <Route path='/admindashboard' element={<Admindashboard/>} >
         <Route path='/admindashboard/course_details' element={<Admincourse/>}/>

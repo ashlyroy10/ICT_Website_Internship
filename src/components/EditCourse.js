@@ -10,12 +10,13 @@ const EditCourse = () => {
     let {id} = useParams();
     const navigate = useNavigate();
 
+    let [errors, setErrors] = useState({});
+    let [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
     const [newcourse, setnewcourse] = useState({
         coursetitle: '',
         coursetype: '',
         overview: '',
-        thumbImage:'',
-        syllabusfile:'',
         description: '',
         duration: '',
         internship:'',
@@ -26,7 +27,7 @@ const EditCourse = () => {
         cstatus: ''
 
     });
-    const { coursetitle, coursetype, overview, thumbImage, syllabusfile, description, duration, internship, fee, cmode, startdate, enddate, cstatus} = newcourse;
+    const { coursetitle, coursetype, overview, description, duration, internship, fee, cmode, startdate, enddate, cstatus} = newcourse;
 
     const loadcourse = async () => {
         const result = await axios.get(`/getcourse/${id}`);
@@ -35,9 +36,14 @@ const EditCourse = () => {
 
     useEffect(() => {
         loadcourse();
-      }, []);
+        if (Object.keys(errors).length === 0) {
+            setIsButtonDisabled(false);
+          } else {
+            setIsButtonDisabled(true);
+          }
+        }, [errors]);
 
-    let [errors, setErrors] = useState({});
+    
 
     const onInputChange = e => {
         setnewcourse({ ...newcourse, [e.target.name]: e.target.value });
@@ -183,7 +189,7 @@ const EditCourse = () => {
                                        
                 </div>
                 <div class="mb-3">
-                    <button type='submit' className='btn btn-success w-25' onClick={updatecourse}>Save</button>
+                    <button type='submit' className='btn btn-success w-25' onClick={updatecourse} disabled={isButtonDisabled}>Save</button>
                 </div>
                 </form>
                 </div>

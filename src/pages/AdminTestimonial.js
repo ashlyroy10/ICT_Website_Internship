@@ -21,6 +21,7 @@ const AdminTestimonial = () => {
   
   //To delete one entry
   const deletetestimonial = async (id, e) => {
+    
     e.preventDefault();
     if (window.confirm("Are you sure you want to delete this entry?")) {
       try {
@@ -74,7 +75,7 @@ const AdminTestimonial = () => {
               <td className='align-middle'>{testimonials.testimonial}</td>
               <td className='align-middle'>{testimonials.student_name}</td>
               <td className='align-middle'><img src={filepath+testimonials.student_photo} alt={testimonials.student_name} width="80px" /></td>              
-              <td className='align-middle'>{testimonials.course}</td>
+              <td className='align-middle'>{testimonials.student_course}</td>
               <td className='align-middle'>{testimonials.batch}</td>
               <td className='align-middle'>
               <Link to={`/edittestimonial/${testimonials._id}`}><button className='btn btn-success mx-1'>

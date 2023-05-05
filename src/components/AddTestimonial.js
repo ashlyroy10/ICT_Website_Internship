@@ -10,7 +10,7 @@ const AddTestimonial = () => {
         testimonial: '',
         student_name: '',
         student_photo: '',
-        course:'',
+        student_course:'',
         batch:''
     })
 
@@ -37,16 +37,20 @@ const AddTestimonial = () => {
         formData.append('student_photo', testimonials.student_photo, testimonials.student_photo.name)
         formData.append('testimonial', testimonials.testimonial)        
         formData.append('student_name', testimonials.student_name)
-        formData.append('course', testimonials.course)
+        formData.append('student_course', testimonials.student_course)
         formData.append('batch', testimonials.batch)
-        console.log(formData)
+        // console.log(formData)
+        // for (const [key, value] of formData.entries()) {
+        //     console.log(`${key}: ${value}`);
+        //   }
         
         try {
           console.log("in input testimonial try section")
-          const response = await axios.post("/addtestimonial",formData);        
+          const response = await axios.post("/addtestimonial", formData);        
           alert(`${response.data.student_name} Added to Database`);        
           navigate("/admindashboard/testimonials"); 
         } catch (error) {
+            console.error("Yoooooooo")
           console.log(error);
           alert("Error adding testimonial");
         }
@@ -95,8 +99,8 @@ const AddTestimonial = () => {
                 </div>
 
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="course" name='course' onChange={handleInput} placeholder='Course' />
-                    {<p style={{color:"red"}}>{errors.course}</p>}
+                    <input type="text" class="form-control" id="student_course" name='student_course' onChange={handleInput} placeholder='Course' />
+                    {<p style={{color:"red"}}>{errors.student_course}</p>}
                 </div>
 
                 <div class="mb-3">

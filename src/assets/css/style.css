@@ -197,22 +197,32 @@ body{
     }
   }
 
+  /* responsive attempts for intropart by anooj */
+  @media (max-width: 576px) {
+    .p2 img {
+        display: none;
+    }
+  }
+
 /* for small devices */
 @media (max-width: 576px) {
     .login-box {
         width: 100%;
     }
 
+
+
     .carousel-item img {
         height: 400px;
         max-width: 75%;
       }
+      
 
-      .intro-pic {
+      /* .intro-pic {
         display: none;
         width: 0px;
         height: 0px;
-      }
+      } */
 }
 
 /* Vijay Style */
@@ -339,9 +349,9 @@ body{
     font-weight: 400;
   }
 
-  .p2 button:hover {
+  /* .p2 button:hover {
     background: #209dd8;
-  }
+  } */
 
   .carousel-item img {
     height: auto;

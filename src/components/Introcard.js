@@ -1,5 +1,6 @@
 import React from "react";
 import coursedp from "../assets/images/coursepic.png";
+import { Link } from "react-router-dom";
 
 // import Testimonal2 from '../assets/image/Testimonal2nd.jpg'
 // import Testimonal3 from '../assets/image/Testimonal3rd.jpg'
@@ -9,52 +10,55 @@ const Introcard = () => {
   return (
     <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
       <div class="col">
-        <div class="card h-100">
-          <img src={coursedp} class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
+        <div class="card1  border border-light-subtle rounded-3 border-4">
+          <img src={coursedp} class="card-img-top" alt="..."/>
+          <div class="card-body p-3">
+            <Link to={'/courses/singlepage'}><h6 class="card-title">Python Programming</h6></Link>
           </div>
-          {/* </img> <div class="card-footer"> */}
-          {/* <small class="text-body-secondary">Last updated 3 mins ago</small> */}
-          {/* </div> */}
         </div>
       </div>
       <div class="col">
-        <div class="card h-100">
-          <img src={coursedp} class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This card has supporting text below as a natural lead-in to
-              additional content.
-            </p>
+        <div class="card1  border border-light-subtle rounded-3 border-4">
+          <img src={coursedp} class="card-img-top" alt="..."/>
+          <div class="card-body p-3">
+            <Link to={'/courses/singlepage'}><h6 class="card-title">Python Programming</h6></Link>
           </div>
-          {/* <div class="card-footer"> */}
-          {/* <small class="text-body-secondary">Last updated 3 mins ago</small> */}
-          {/* </div> */}
         </div>
       </div>
       <div class="col">
-        <div class="card h-100">
-          <img src={coursedp} class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This card has even longer content
-              than the first to show that equal height action.
-            </p>
+        <div class="card1  border border-light-subtle rounded-3 border-4">
+          <img src={coursedp} class="card-img-top" alt="..."/>
+          <div class="card-body p-3">
+            <Link to={'/courses/singlepage'}><h6 class="card-title">Python Programming</h6></Link>
           </div>
-          {/* <div class="card-footer"> */}
-          {/* <small class="text-body-secondary">Last updated 3 mins ago</small> */}
-          {/* </div> */}
         </div>
       </div>
+      <div class="col">
+        <div class="card1  border border-light-subtle rounded-3 border-4">
+          <img src={coursedp} class="card-img-top" alt="..."/>
+          <div class="card-body p-3">
+            <Link to={'/courses/singlepage'}><h6 class="card-title">Python Programming</h6></Link>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card1  border border-light-subtle rounded-3 border-4">
+          <img src={coursedp} class="card-img-top" alt="..."/>
+          <div class="card-body p-3">
+            <Link to={'/courses/singlepage'}><h6 class="card-title">Python Programming</h6></Link>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card1  border border-light-subtle rounded-3 border-4">
+          <img src={coursedp} class="card-img-top" alt="..."/>
+          <div class="card-body p-3">
+            <Link to={'/courses/singlepage'}><h6 class="card-title">Python Programming</h6></Link>
+          </div>
+        </div>
+      </div>
+     
+  
     </div>
   );
 };

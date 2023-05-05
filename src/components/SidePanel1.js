@@ -7,7 +7,7 @@ const SidePanel1 = () => {
     <div>
       <div className='container-fluid d-flex justify-content-evenly'> 
         <div className='row'>
-          <div className='sidepane col-2 vh-100 sticky-lg-top'>
+          <div className='sidepane col-lg-2 col-md-2 col-sm-2 col-12 vh-100 sticky-lg-top'>
             <ul className='nav nav-tabs my-2' id="myTab" role="tablist">
               <li className="nav-item" role="presentation">
               <Link to={'/what_we_do/trainings'}><button className="sidebtn fw-bold btn nav-link active" id="train-tab" data-bs-toggle="tab" data-bs-target="#train-tab-pane" type="button" role="tab" aria-controls="train-tab-pane" aria-selected="true">Trainings</button></Link>
@@ -29,7 +29,7 @@ const SidePanel1 = () => {
               </li>
             </ul>
           </div>
-          <div className="col-10">
+          <div className="col-lg-10 col-md-10 col-sm-10 col-0">
             <div className="tab-content flex-grow-1" id="myTabContent">
               <div className="tab-pane fade show active" id="train-tab-pane" role="tabpanel" aria-labelledby="train-tab" tabindex="0"><Outlet/></div>
               <div className="tab-pane fade" id="govern-tab-pane" role="tabpanel" aria-labelledby="govern-tab" tabindex="0"><Outlet/></div>

@@ -80,8 +80,8 @@ const Adminstaff = () => {
             <tr key={index}>
               <td className='align-middle'>{index+1}</td>
               <td className='align-middle'>{value.staffname}</td>
-              <td className='align-middle'><img src={filepath+value.photo} alt={value.staffname} width="80px" />
-              <br/><button className='btn btn-warning'>change</button></td>
+              <td className='align-middle'><img src={filepath+value.photo} alt={value.staffname} width="80px" /></td>
+              {/* <br/><button className='btn btn-warning'>change</button> */}
               <td className='align-middle'>{value.designation}</td>
               <td className='align-middle'>{value.department}</td>
               <td className='align-middle'>

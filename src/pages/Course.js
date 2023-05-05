@@ -1,36 +1,77 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../assets/css/style.css'
 import pythoncourse from '../assets/images/coursepic.png'
 import HeaderMain from '../components/HeaderMain'
 import Footer from '../components/Footer'
 import { useParams } from 'react-router-dom'
+import axios from "axios";
 
 const Course = () => {
     
-  let { id } = useParams()
+  let { id } = useParams();
+  const filepath = "http://localhost:5000/uploads/coursethumb/"
+  
+  const [singlecourse, setsinglecourse] = useState([]);
+
+  let badgeClass = '';
+  let badgeText = '';
+
+  switch (singlecourse.cstatus) {
+    case 'op':
+      badgeClass = 'text-bg-success';
+      badgeText = 'OPEN';
+      break;
+    case 'cl':
+      badgeClass = 'text-bg-danger';
+      badgeText = 'CLOSED';
+      break;
+    case 'ca':
+      badgeClass = 'text-bg-secondary';
+      badgeText = 'CANCELLED';
+      break;
+    default:
+      badgeClass = 'text-bg-secondary';
+      badgeText = 'UNKNOWN';
+      break;
+  }
+
+
+  useEffect(() => {
+    
+    axios.get(`/getcourse/${id}`)
+      .then((response) => {
+        setsinglecourse(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+  }, []);
+
   return (
     
     <div className='singlepage'>
       <HeaderMain/>
       <div class="row">
-          <h1>Cyber Security Analyst</h1>
+          <h1>{singlecourse.coursetitle}</h1>
         <div class="firstbtn row">
-          <h1><button class="rounded-pill btn btn-danger">Starts on 2023 May 15</button></h1>
+          <h1><button class="rounded-pill btn btn-danger">Starts on {singlecourse.startdate}</button></h1>
         </div>
       </div>
       <div class="row">
         <div class="col-md-5">
-          <img src={pythoncourse} alt="python course pic" class="float-start" width="850px" height="450"/>
+          <img src={filepath+singlecourse.thumbImage} alt={singlecourse.coursetitle+"_thumbnail"} class="float-start" width="850px" height="450"/>
         </div>
         <div class="col-md-7">
           <div class="side-info mt-5">
-            <button type = "button" class = "btn btn-outline-primary btn-lg fw-medium">8000 INR+GST</button><br/><br/>
-            <span class="badge rounded-pill text-bg-success fs-5 fw-normal">OPEN</span><br/><br/>
+            <button type = "button" class = "btn btn-outline-primary btn-lg fw-medium">{singlecourse.fee} INR+GST</button><br/><br/>
+            <span className={`badge rounded-pill fs-5 fw-normal ${badgeClass}`}>{badgeText}</span><br/><br/>
             <h3 class="text-center">This course includes</h3>
             <ul>
-              <li class="text-center"><strong>45 Days(105 Hrs)</strong></li>
-              <li class="text-center"><strong>45 Hrs</strong></li>
-              <li class="text-center"><strong>Hybrid Classes</strong></li>
+              <li class="text-center"><strong>{singlecourse.duration} Hours</strong></li>
+              <li class="text-center"><strong>{singlecourse.cmode} Classes &</strong></li>
+              <li class="text-center"><strong>{singlecourse.internship} Hrs of Internship</strong></li>
             </ul>
           </div>
         </div>
@@ -47,8 +88,7 @@ const Course = () => {
                   </h2>
                   <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                       <div class="accordion-body">
-                          <p>Python is a general-purpose, object-oriented, high-level programming language. This program focuses on the installation of Python, the basic construct of Python, the basics of databases and use of Python in web development. Python has an enormous degree of implicit data structures and these make it attractive for Web Application Development. 
-                          This program also covers the deployment of a web application.</p>
+                          <p>{singlecourse.overview}</p>
                       </div>
                   </div>
                 </div>
@@ -143,7 +183,7 @@ const Course = () => {
                   </h2>
                   <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-                      <p><strong>8,000 INR + 18% GST</strong></p>
+                      <p><strong>{singlecourse.fee} INR + 18% GST</strong></p>
                       <ul>
                         <li class="text-start">The candidates who score 61% and above on the admission test shall be eligible for the scholarship, provided they are unemployed. 
                           All eligible candidates will receive 75% of their total fee as a scholarship.</li>

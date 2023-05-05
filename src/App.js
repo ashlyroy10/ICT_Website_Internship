@@ -28,6 +28,7 @@ import AdminTestimonial from './pages/AdminTestimonial';
 import Adminstaff from './pages/Adminstaff';
 import Admincourse from './pages/Admincourse';
 import EditTestimonial from './components/EditTestimonial';
+import Tempworkshop from './pages/Tempworkshop';
 
 
 
@@ -77,6 +78,9 @@ function App() {
       <Route path='/admindashboard/addcourse' element={<AddCourse/>} />
       <Route path='/admindashboard/addstaff' element={<AddStaff/>} /> 
       <Route path='/admindashboard/addtestimonials' element={<AddTestimonial/>} /> 
+
+      {/* temporary */}
+      <Route path='/workshop' element={<Tempworkshop/>} /> 
     
      </Routes>
      

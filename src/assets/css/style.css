@@ -23,9 +23,6 @@
     padding: 2rem;
 }
 
-.dash-body {
-    height: calc(100%-100px);
-}
 
 .font-link{
     font-family: 'Poppins', sans-serif;
@@ -148,83 +145,6 @@ body{
     transition-duration: .25s;
 }
 
-/* TO MAKE RESPONSIVE */
-
-/* for medium devices */
-@media (max-width: 768px) {
-    .login-box {
-        width: 80%;
-    }
-
-    .side-menu-toggle {
-        display: block;
-        
-    }
-
-    .side-pane {
-        position: fixed;
-        top: 0;
-        left: -300px;
-        height: 100vh;
-        width: 100%;
-        max-width: 300px;
-        transition: 0.2s linear;
-    }
-
-    .tab-content {
-        background-color: #E5FDD1;
-        
-    }
-
-    .carousel-item img {
-        height: 500px;
-        max-width: 60%;
-      }
-    
-}
-
-@media (min-width: 992px) {
-    .carousel-item img {
-      height: 600px;
-      max-width: 50%;
-    }
-  }
-  
-  @media (min-width: 1200px) {
-    .carousel-item img {
-      height: 700px;
-      max-width: 40%;
-    }
-  }
-
-  /* responsive attempts for intropart by anooj */
-  @media (max-width: 576px) {
-    .p2 img {
-        display: none;
-    }
-  }
-
-/* for small devices */
-@media (max-width: 576px) {
-    .login-box {
-        width: 100%;
-    }
-
-
-
-    .carousel-item img {
-        height: 400px;
-        max-width: 75%;
-      }
-      
-
-      /* .intro-pic {
-        display: none;
-        width: 0px;
-        height: 0px;
-      } */
-}
-
 /* Vijay Style */
 
 .header-admin {
@@ -245,11 +165,6 @@ body{
 
 .dash-body {
     height: calc(100%-100px);
-    background: rgb(252,250,220);
-    background: -moz-linear-gradient(34deg, rgba(252,250,220,1) 11%, rgba(249,255,245,1) 97%);
-    background: -webkit-linear-gradient(34deg, rgba(252,250,220,1) 11%, rgba(249,255,245,1) 97%);
-    background: linear-gradient(34deg, rgba(252,250,220,1) 11%, rgba(249,255,245,1) 97%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fcfadc",endColorstr="#f9fff5",GradientType=1);
     }
 
 
@@ -257,8 +172,7 @@ body{
     display: flex;
     flex-direction: row;
     flex-flow: row;      
-    background: #c9c8c7;
-    /* background: #e8eaf6; */
+    background: #2b2929;
     z-index: 0;    
     position: relative;
     /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
@@ -371,29 +285,6 @@ body{
     background-color:rgba(0, 0, 0, 0);
 }
 
-/* .p2  {
-    position: relative;
-  }
-
-.animationpic{
-    position: absolute;
-    left: 0;
-    top: 0;
-    animation: move 3.5s linear infinite;
-
-}
-
-@keyframes move{
-    0%{
-        transform: translate(-50px,0px);
-    }
-    50%{
-        transform: translate(0px,-10px);
-    }
-    100%{
-        transform: translate(-35px,0px);
-    }
-} */
 
 .col{
     margin-bottom: 0px;
@@ -523,4 +414,83 @@ body{
 .teamcard{
     max-width: 500px;
     max-height: 600px;
+}
+
+
+/* RESPONSIBLE VIJAY */
+/* TO MAKE RESPONSIVE */
+
+/* for medium devices */
+@media (max-width: 768px) {
+    .login-box {
+        width: 80%;
+    }
+
+    .side-menu-toggle {
+        display: block;
+        
+    }
+
+    .side-pane {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        height: 100vh;
+        width: 100%;
+        max-width: 300px;
+        transition: 0.2s linear;
+    }
+
+    .tab-content {
+        background-color: #E5FDD1;
+        
+    }
+
+    .carousel-item img {
+        height: 500px;
+        max-width: 60%;
+      }
+    
+}
+
+@media (min-width: 992px) {
+    .carousel-item img {
+      height: 600px;
+      max-width: 50%;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .carousel-item img {
+      height: 700px;
+      max-width: 40%;
+    }
+  }
+
+  /* responsive attempts for intropart by anooj */
+  @media (max-width: 576px) {
+    .p2 img {
+        display: none;
+    }
+  }
+
+/* for small devices */
+@media (max-width: 576px) {
+    .login-box {
+        width: 100%;
+    }
+
+
+
+    .carousel-item img {
+        height: 400px;
+        max-width: 75%;
+      }
+      
+
+      /* .intro-pic {
+        display: none;
+        width: 0px;
+        height: 0px;
+      } */
 }

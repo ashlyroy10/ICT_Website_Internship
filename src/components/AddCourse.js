@@ -154,9 +154,9 @@ const AddCourse = () => {
                   <label for="cmode" class="form-label">Select Mode of Study</label>
                   <select className='form-control' name="cmode" onChange={handleInput} id="cmode">
                     <option value=""></option>
-                    <option value="offline">Offline</option>
-                    <option value="online">Online</option>
-                    <option value="hybrid">Hybrid</option>
+                    <option value="OFFLINE">Offline</option>
+                    <option value="ONLINE">Online</option>
+                    <option value="HYBRID">Hybrid</option>
                   </select>
                   {<p style={{color:"red"}}>{errors.cmode}</p>}
 

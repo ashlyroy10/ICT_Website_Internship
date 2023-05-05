@@ -494,3 +494,28 @@ body{
         height: 0px;
       } */
 }
+
+/* WORKSHOP */
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin-side-bar {
+    flex: 1 1 0;
+    max-width: 300px;
+    padding: 2rem 1rem;
+    background-color: #2e3047;
+}
+
+.admin-side-bar h4 {
+    color: #707793;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+}
+
+.admin-side-bar .menu {
+    
+}

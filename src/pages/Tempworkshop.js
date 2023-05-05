@@ -6,9 +6,11 @@ const Tempworkshop = () => {
         <aside className='admin-side-bar'>
             <h4>Admin Dashboard</h4>
 
-            <a href='#' className='menu-item is-active'>Courses</a>
-            <a href='#' className='menu-item'>Staff</a>
-            <a href='#' className='menu-item'>Testimonial</a>
+            <nav className='admin-menu'>
+                <a href='#' className='menu-item is-active'>Courses</a>
+                <a href='#' className='menu-item'>Staff</a>
+                <a href='#' className='menu-item'>Testimonial</a>
+            </nav>
 
         </aside>
 

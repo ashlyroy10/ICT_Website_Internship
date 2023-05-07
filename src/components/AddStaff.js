@@ -29,8 +29,15 @@ const AddStaff = () => {
     }
 
     function handleStaffPhoto(event) {
-      // setPhoto(event.target.files[0]);
-      console.log(event.target.files[0]);
+      // console.log(event.target.files[0]);
+
+      const selectedFile = event.target.files[0];
+      const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+      if (!allowedExtensions.exec(selectedFile.name)) {
+        alert('Please upload file having extensions .jpeg/.jpg/.png only.');
+        event.target.value = '';
+        return false;
+      }
       setStaffDetails({...staffDetails, photo:event.target.files[0]})
     }
 
@@ -45,7 +52,7 @@ const AddStaff = () => {
 
     //insert function
     const inputstaff = async (e) => {
-      console.log("in input staff")
+      // console.log("in input staff")
       const formData = new FormData();
       formData.append('photo', staffDetails.photo, staffDetails.photo.name)
       formData.append('staffname', staffDetails.staffname)
@@ -53,13 +60,17 @@ const AddStaff = () => {
       formData.append('department', staffDetails.department)
       console.log(formData)
       try {
-        console.log("in input staff try section")
+        // console.log("in input staff try section")
         const response = await axios.post("/addstaff", formData);        
         alert(`${response.data.staffname} Added to Database`);        
         navigate("/admindashboard/staff_details"); 
       } catch (error) {
         console.log(error);
-        alert("Error adding staff member");
+        if (error.response && error.response.data && error.response.data.error) {
+          // display the error message to the user
+          alert(error.response.data.error);
+        }
+        // alert("Error adding staff member:"+error);
       }
       
     };

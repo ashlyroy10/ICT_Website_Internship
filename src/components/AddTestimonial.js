@@ -26,7 +26,14 @@ const AddTestimonial = () => {
 
     function handleTestimonialPhoto(event) {
         // setPhoto(event.target.files[0]);
-        console.log(event.target.files[0]);
+        // console.log(event.target.files[0]);
+        const selectedFile = event.target.files[0];
+        const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+        if (!allowedExtensions.exec(selectedFile.name)) {
+            alert('Please upload file having extensions .jpeg/.jpg/.png only.');
+            event.target.value = '';
+            return false;
+        }
         setTestimonials({...testimonials, student_photo:event.target.files[0]})
       }
 

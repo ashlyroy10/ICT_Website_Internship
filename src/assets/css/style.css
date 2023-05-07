@@ -41,6 +41,7 @@ body{
 .header-main .nav-item {
     margin-top: 3px;
     margin-bottom: 3px;
+    
 }
 
 .header-main img{
@@ -130,8 +131,8 @@ body{
 
 .header-admin {
     width: 100%;
-    height: 100px;
-    /* background: #e8eaf6; */
+    height: 75px;
+    /* backgr1ound: #e8eaf6; */
     /* background: #c5cae9; */
     color: #000000;
     font-weight: bold;
@@ -141,7 +142,8 @@ body{
 }
 
 .header-admin .ictlogo {
-    width: 250px;
+    width: 200px;
+    padding-bottom: 20px;
 }
 
 .dash-body {
@@ -156,6 +158,7 @@ body{
     background: #2b2929;
     z-index: 0;    
     position: relative;
+    width: 200px;
     /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
@@ -169,13 +172,14 @@ body{
     height: calc(100vh - 100px);  
 }
 
+
 .side-pane .side-button {
-    width: 200px;
+    width: auto;
     border-radius: 4rem;   
-    color: #000000;
+    color: #ffffff;
 }
 
-.sid-epane .side-navitem li {
+.side-pane .side-navitem li {
     padding: 8px;
     border-radius: 3rem;
 }
@@ -193,7 +197,7 @@ body{
 
 .logout-button {
     border-radius: 5rem;
-    width: 200px;
+    width: auto;
   }
 
 #success-message {

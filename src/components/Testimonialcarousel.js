@@ -31,6 +31,7 @@ const TestimonialCarousel = () => {
                     src={filepath + value.student_photo}
                     className="img-fluid rounded-start"
                     alt={value.student_name}
+                    
                   />
                 </div>
                 <div className="col-md-8">

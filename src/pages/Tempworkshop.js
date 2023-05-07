@@ -1,6 +1,11 @@
 import React from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 
+import Admincourse from "../pages/Admincourse";
+import Adminstaff from "../pages/Adminstaff";
+
+
+
 import "../assets/css/adminstyle.css";
 import hlogo from "../assets/images/hlogo.svg"
 
@@ -10,7 +15,7 @@ const Tempworkshop = () => {
       {/* <!-- Sidebar --> */}
       <div class="s-layout__sidebar">
       
-        <a class="s-sidebar__trigger " href="#0">
+        <a class="s-sidebar__trigger"  href="#0">
           <button className="btn btn-light my-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -37,23 +42,9 @@ const Tempworkshop = () => {
               </div>
             </li>
 
-            <li title="Course Details">
-            <Link className="s-sidebar__nav-link" to={'/admindashboard/course_details'}>
-            <i className="nav-icon align-middle pt-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    className="bi bi-book-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
-                  </svg>
-                </i>
-                <em>Courses</em>
-
-            </Link>
+            
+            {/* COURSE DETAILS nav */}
+           <li>
               <a class="s-sidebar__nav-link" href="#0">
                 <i className="nav-icon align-middle pt-3">
                   <svg
@@ -70,22 +61,28 @@ const Tempworkshop = () => {
                 <em>Courses</em>
               </a>
             </li>
+
+            {/* STAFF DETAILS nav */}
             <li>
-              <a class="s-sidebar__nav-link" href="#0">
+              <a class="s-sidebar__nav-link" href="#1">
                 <i class="fa fa-user"></i>
                 <em>Staff</em>
               </a>
             </li>
+
+            {/* TESTIMONIAL nav */}
             <li>
-              <a class="s-sidebar__nav-link" href="#0">
+              <a class="s-sidebar__nav-link" href="#2">
                 <i class="fa fa-camera"></i>
                 <em>Testimonials</em>
               </a>
             </li>
 
 
+
+            {/* SUBSCRIBER MAIL nav */}
             <li>
-              <a class="s-sidebar__nav-link" href="#0">
+              <a class="s-sidebar__nav-link" href="#3">
                 <i class="fa fa-camera"></i>
                 <em>Subscribers</em>
               </a>
@@ -126,6 +123,8 @@ const Tempworkshop = () => {
 
       {/* <!-- Content --> */}
       <main class="s-layout__content" id="mytabcontent">
+
+            {/* COURSE DETAILS TARGET */}
             <div
               className="tab-pane fade show active"
               id="course-tab-pane"
@@ -133,8 +132,11 @@ const Tempworkshop = () => {
               aria-labelledby="course-tab"
               tabIndex="0"
             >
-              <Outlet />
+              <Admincourse />
+              {/* <Outlet /> */}
             </div>
+
+            
       </main>
 
       {/* <div className='menu-toggle'>

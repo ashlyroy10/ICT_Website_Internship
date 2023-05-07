@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import HeaderMain from '../components/HeaderMain'
 import Testimonialcarousel from '../components/Testimonialcarousel'
 import Footer from '../components/Footer'
@@ -10,33 +10,33 @@ const Home = () => {
 
   //goto TOP
   
-    useEffect(() => {
-      function handleButtonClick() {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-      }
+    // useEffect(() => {
+    //   function handleButtonClick() {
+    //     window.scrollTo({
+    //       top: 0,
+    //       behavior: "smooth"
+    //     });
+    //   }
   
-      function handleScroll() {
-        var button = document.getElementById("go-to-top");
-        if (window.pageYOffset > 100) {
-          button.classList.add("show");
-          button.classList.remove("d-none");
-        } else {
-          button.classList.remove("show");
-          button.classList.add("d-none");
-        }
-      }
+    //   function handleScroll() {
+    //     var button = document.getElementById("go-to-top");
+    //     if (window.pageYOffset > 100) {
+    //       button.classList.add("show");
+    //       button.classList.remove("d-none");
+    //     } else {
+    //       button.classList.remove("show");
+    //       button.classList.add("d-none");
+    //     }
+    //   }
   
-      document.getElementById("go-to-top").addEventListener("click", handleButtonClick);
-      window.addEventListener("scroll", handleScroll);
+    //   document.getElementById("go-to-top").addEventListener("click", handleButtonClick);
+    //   window.addEventListener("scroll", handleScroll);
   
-      return () => {
-        document.getElementById("go-to-top").removeEventListener("click", handleButtonClick);
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }, []);
+    //   return () => {
+    //     document.getElementById("go-to-top").removeEventListener("click", handleButtonClick);
+    //     window.removeEventListener("scroll", handleScroll);
+    //   };
+    // }, []);
     
   return (
     <div className='font-link'>
@@ -63,7 +63,7 @@ const Home = () => {
             <Introcard/>
             </div>
     </div>
-    <button id="go-to-top" className='btn btn-warning d-none'>Go to Top</button>
+    {/* <button id="go-to-top" className='btn btn-warning d-none'>Go to Top</button> */}
     <div className='row'>
     <Footer/>
     </div>

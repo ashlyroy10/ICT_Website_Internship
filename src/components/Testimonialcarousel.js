@@ -26,20 +26,21 @@ const TestimonialCarousel = () => {
           <Carousel.Item key={index}>
             <div className="carouselcard card">
               <div className="row g-0">
-                <div className="col-md-4">
+                <div className="col-md-4 m-auto">
                   <img
                     src={filepath + value.student_photo}
-                    className="img-fluid rounded-start"
+                    className="img h-100  rounded-circle"
                     alt={value.student_name}
                     
                   />
                 </div>
                 <div className="col-md-8">
                   <div className="card-body">
-                    <h5 className="card-title">{value.student_name}</h5>
+                    
                     <p className="card-text">
                       <strong>"{value.testimonial}"</strong>
                     </p>
+                    <p className="card-title">{value.student_name}</p>
                     <p className="card-text">
                       <strong>Course:</strong> {value.student_course}
                     </p>

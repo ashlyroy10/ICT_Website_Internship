@@ -440,16 +440,16 @@ body{
     }
 
     .carousel-item img {
-        height: 500px;
-        max-width: 60%;
+        height: 30px;
+        max-width: 50%;
       }
     
 }
 
 @media (min-width: 992px) {
     .carousel-item img {
-      height: 600px;
-      max-width: 50%;
+      height: 300px;
+      max-width: 30%;
     }
   }
   

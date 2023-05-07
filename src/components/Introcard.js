@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import coursedp from "../assets/images/coursepic.png";
 import { Link } from "react-router-dom";
-
-// import Testimonal2 from '../assets/image/Testimonal2nd.jpg'
-// import Testimonal3 from '../assets/image/Testimonal3rd.jpg'
-// import Testimonal4 from '../assets/image/Testimonal4th.jpg'
+import axios from "axios";
 
 const Introcard = () => {
+
+  const [courseList, setCourseList] = useState([]);
+
+useEffect(() => {
+    
+  axios.get('/allcourse')
+    .then((response) => {
+      setCourseList(response.data);
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+}, []);
+
+
+
   return (
     <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
       <div class="col">

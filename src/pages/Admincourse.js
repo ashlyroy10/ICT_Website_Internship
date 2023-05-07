@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Admincourse = () => {
   var [courseList, setCourseList] = useState([]);
 
-  const filepath = "http://localhost:5000/uploads/coursethumb/";
+  // const filepath = "http://localhost:5000/uploads/coursethumb/";
 
   useEffect(() => {
     async function fetchData() {
@@ -67,7 +67,7 @@ const Admincourse = () => {
                     <h5 className="card-title">{value.coursetitle}</h5>
                   </div>
 
-                  <img src={filepath+value.thumbImage} alt={value.title} className=" my-2" width="220px" /><br/>
+                  <img src={value.thumbImage} alt={value.title} className=" my-2" width="220px" /><br/>
                   {/* <button className="btn btn-warning">Change</button> */}
 
                   {/* ACCORDION */}

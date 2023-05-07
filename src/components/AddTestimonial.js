@@ -24,41 +24,41 @@ const AddTestimonial = () => {
         setErrors(ValidateTestimonials(newObj))
     }
 
-    function handleTestimonialPhoto(event) {
+    // function handleTestimonialPhoto(event) {
         // setPhoto(event.target.files[0]);
         // console.log(event.target.files[0]);
-        const selectedFile = event.target.files[0];
-        const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
-        if (!allowedExtensions.exec(selectedFile.name)) {
-            alert('Please upload file having extensions .jpeg/.jpg/.png only.');
-            event.target.value = '';
-            return false;
-        }
-        setTestimonials({...testimonials, student_photo:event.target.files[0]})
-      }
+    //     const selectedFile = event.target.files[0];
+    //     const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+    //     if (!allowedExtensions.exec(selectedFile.name)) {
+    //         alert('Please upload file having extensions .jpeg/.jpg/.png only.');
+    //         event.target.value = '';
+    //         return false;
+    //     }
+    //     setTestimonials({...testimonials, student_photo:event.target.files[0]})
+    //   }
 
     //insert function
     const inputtestimonial = async (e) => {
-        console.log("in input testimonial")
-        const formData = new FormData();
-        formData.append('student_photo', testimonials.student_photo, testimonials.student_photo.name)
-        formData.append('testimonial', testimonials.testimonial)        
-        formData.append('student_name', testimonials.student_name)
-        formData.append('student_course', testimonials.student_course)
-        formData.append('batch', testimonials.batch)
+        // console.log("in input testimonial")
+        // const formData = new FormData();
+        // formData.append('student_photo', testimonials.student_photo, testimonials.student_photo.name)
+        // formData.append('testimonial', testimonials.testimonial)        
+        // formData.append('student_name', testimonials.student_name)
+        // formData.append('student_course', testimonials.student_course)
+        // formData.append('batch', testimonials.batch)
         // console.log(formData)
         // for (const [key, value] of formData.entries()) {
         //     console.log(`${key}: ${value}`);
         //   }
         
         try {
-          console.log("in input testimonial try section");
-          const ans = await axios.post("/addtestimonial", formData); 
+        //   console.log("in input testimonial try section");
+          const ans = await axios.post("/addtestimonial", testimonials); 
           console.log(ans.data.student_name);       
           alert(`${ans.data.student_name} Added to Database`);        
           navigate("/admindashboard/testimonials"); 
         } catch (error) {
-            console.error("Yoooooooo")
+            // console.error("Yoooooooo")
           console.log(error);
           alert("Error adding testimonial");
         }
@@ -103,7 +103,7 @@ const AddTestimonial = () => {
 
                 <div class="mb-3">
                     <label for="student_photo" class="form-label">Upload Photo</label>
-                    <input class="form-control" type="file" id="student_photo" name='student_photo' onChange={handleTestimonialPhoto} placeholder='Upload Photo' />
+                    <input class="form-control" type="file" id="student_photo" name='student_photo' onChange={handleInput} placeholder='Upload Photo' />
                 </div>
 
                 <div class="mb-3">

@@ -84,11 +84,11 @@ const EditStaff = () => {
                     {<p style={{color:"red"}}>{errors.staffname}</p>}
                 </div>
 
-                {/* <div class="mb-3">
+                <div class="mb-3">
                     <label for="sImage" class="form-label">Upload Photo</label>
-                    <input class="form-control" type="file" id="sImage" name='photo'  onChange={e => onInputChange(e)} placeholder='Upload Photo' />
+                    <input class="form-control" type="text" id="sImage" name='photo'  onChange={e => onInputChange(e)} placeholder='Photo URL' />
                     
-                </div> */}
+                </div>
 
                 <div class="mb-3">
                     <input type="text" class="form-control" id="designation" name='designation' value={designation} onChange={e => onInputChange(e)} placeholder='Designation' maxLength={50}/>

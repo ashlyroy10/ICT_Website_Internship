@@ -8,7 +8,7 @@ const Adminstaff = () => {
 
   var [staffList, setStafflist] = useState([]);
 
-  const filepath = "http://localhost:5000/uploads/staffprofile/";
+  // const filepath = "http://localhost:5000/uploads/staffprofile/";
 
   // const [imagePath, setPath] = useState('');
 
@@ -80,7 +80,7 @@ const Adminstaff = () => {
             <tr key={index}>
               <td className='align-middle'>{index+1}</td>
               <td className='align-middle'>{value.staffname}</td>
-              <td className='align-middle'><img src={filepath+value.photo} alt={value.staffname} width="80px" /></td>
+              <td className='align-middle'><img src={value.photo} alt={value.staffname} width="80px" /></td>
               {/* <br/><button className='btn btn-warning'>change</button> */}
               <td className='align-middle'>{value.designation}</td>
               <td className='align-middle'>{value.department}</td>

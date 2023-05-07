@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import '../assets/css/style.css'
-import pythoncourse from '../assets/images/coursepic.png'
 import HeaderMain from '../components/HeaderMain'
 import Footer from '../components/Footer'
 import { useParams } from 'react-router-dom'
@@ -9,7 +8,7 @@ import axios from "axios";
 const Course = () => {
     
   let { id } = useParams();
-  const filepath = "http://localhost:5000/uploads/coursethumb/"
+  // const filepath = "http://localhost:5000/uploads/coursethumb/"
   
   const [singlecourse, setsinglecourse] = useState([]);
 
@@ -61,7 +60,7 @@ const Course = () => {
       </div>
       <div class="row">
         <div class="col-md-5">
-          <img src={filepath+singlecourse.thumbImage} alt={singlecourse.coursetitle+"_thumbnail"} class="float-start" width="850px" height="450"/>
+          <img src={singlecourse.thumbImage} alt={singlecourse.coursetitle+"_thumbnail"} class="float-start" width="850px" height="450"/>
         </div>
         <div class="col-md-7">
           <div class="side-info mt-5">

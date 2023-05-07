@@ -17,6 +17,7 @@ const EditCourse = () => {
         coursetitle: '',
         coursetype: '',
         overview: '',
+        thumbImage: '',
         description: '',
         duration: '',
         internship:'',
@@ -26,7 +27,7 @@ const EditCourse = () => {
         enddate: '',
         cstatus: ''
     });
-    const { coursetitle, coursetype, overview, description, duration, internship, fee, cmode, startdate, enddate, cstatus} = newcourse;
+    const { coursetitle, coursetype, overview, thumbImage, description, duration, internship, fee, cmode, startdate, enddate, cstatus} = newcourse;
 
     const loadcourse = async () => {
         const result = await axios.get(`/getcourse/${id}`);
@@ -128,6 +129,12 @@ const EditCourse = () => {
                     {<p style={{color:"red"}}>{errors.overview}</p>}
                 </div>
 
+                <div className='col'>
+                        <label for="thumbImage" class="form-label">Upload Thumbnail</label>
+                        <input class="form-control" type="text" name='thumbImage' id="thumbImage" placeholder='Thumbnail Link here' value={thumbImage} onChange={e => onInputChange(e)} />
+                        {<p style={{color:"red"}}>{errors.thumbImage}</p>}
+                </div>
+
                 <div class="mb-3">
                     <textarea class="form-control" name='description' id="description" placeholder='Course Description'  value={description}  onChange={e => onInputChange(e)} ></textarea>
                     {<p style={{color:"red"}}>{errors.description}</p>}
@@ -152,9 +159,9 @@ const EditCourse = () => {
                   <label for="cmode" class="form-label">Select Mode of Study</label>
                   <select className='form-control' name="cmode"  value={cmode}  onChange={e => onInputChange(e)} id="cmode">
                     <option value=""></option>
-                    <option value="offline">Offline</option>
-                    <option value="online">Online</option>
-                    <option value="hybrid">Hybrid</option>
+                    <option value="OFFLINE">Offline</option>
+                    <option value="ONLINE">Online</option>
+                    <option value="HYBRID">Hybrid</option>
                   </select>
                   {<p style={{color:"red"}}>{errors.cmode}</p>}
 

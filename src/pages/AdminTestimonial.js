@@ -4,7 +4,7 @@ import axios from "axios";
 
 const AdminTestimonial = () => {
   let [testimonialList, setTestimonialList] = useState([]);
-  const filepath = "http://localhost:5000/uploads/testimonialphoto/";
+  // const filepath = "http://localhost:5000/uploads/testimonialphoto/";
 
   useEffect(() => {
     async function fetchData() {
@@ -74,7 +74,7 @@ const AdminTestimonial = () => {
               <td className='align-middle'>{index+1}</td>
               <td className='align-middle'>{testimonials.testimonial}</td>
               <td className='align-middle'>{testimonials.student_name}</td>
-              <td className='align-middle'><img src={filepath+testimonials.student_photo} alt={testimonials.student_name} width="80px" /></td>              
+              <td className='align-middle'><img src={testimonials.student_photo} alt={testimonials.student_name} width="80px" /></td>              
               <td className='align-middle'>{testimonials.student_course}</td>
               <td className='align-middle'>{testimonials.batch}</td>
               <td className='align-middle'>

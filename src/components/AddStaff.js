@@ -28,18 +28,18 @@ const AddStaff = () => {
         setErrors(ValidateStaff(staffObj))               
     }
 
-    function handleStaffPhoto(event) {
+    // function handleStaffPhoto(event) {
       // console.log(event.target.files[0]);
 
-      const selectedFile = event.target.files[0];
-      const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
-      if (!allowedExtensions.exec(selectedFile.name)) {
-        alert('Please upload file having extensions .jpeg/.jpg/.png only.');
-        event.target.value = '';
-        return false;
-      }
-      setStaffDetails({...staffDetails, photo:event.target.files[0]})
-    }
+      // const selectedFile = event.target.files[0];
+      // const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+      // if (!allowedExtensions.exec(selectedFile.name)) {
+      //   alert('Please upload file having extensions .jpeg/.jpg/.png only.');
+      //   event.target.value = '';
+      //   return false;
+      // }
+      // setStaffDetails({...staffDetails, photo:event.target.files[0]})
+    // }
 
      //Checking Errros
      useEffect(() => {
@@ -53,15 +53,15 @@ const AddStaff = () => {
     //insert function
     const inputstaff = async (e) => {
       // console.log("in input staff")
-      const formData = new FormData();
-      formData.append('photo', staffDetails.photo, staffDetails.photo.name)
-      formData.append('staffname', staffDetails.staffname)
-      formData.append('designation', staffDetails.designation)
-      formData.append('department', staffDetails.department)
-      console.log(formData)
+      // const formData = new FormData();
+      // formData.append('photo', staffDetails.photo, staffDetails.photo.name)
+      // formData.append('staffname', staffDetails.staffname)
+      // formData.append('designation', staffDetails.designation)
+      // formData.append('department', staffDetails.department)
+      // console.log(formData)
       try {
         // console.log("in input staff try section")
-        const response = await axios.post("/addstaff", formData);        
+        const response = await axios.post("/addstaff", staffDetails);        
         alert(`${response.data.staffname} Added to Database`);        
         navigate("/admindashboard/staff_details"); 
       } catch (error) {
@@ -108,7 +108,7 @@ const AddStaff = () => {
 
                 <div class="mb-3">
                     <label for="sImage" class="form-label">Upload Photo</label>
-                    <input class="form-control" type="file" id="sImage" name='photo' onChange={handleStaffPhoto} placeholder='Upload Photo' />
+                    <input class="form-control" type="text" id="sImage" name='photo' onChange={handleInput} placeholder='Enter Photo URL' />
                     
                 </div>
 

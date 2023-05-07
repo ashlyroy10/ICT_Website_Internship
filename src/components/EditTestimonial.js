@@ -88,10 +88,10 @@ const EditTestimonial = () => {
                     {<p style={{color:"red"}}>{errors.student_name}</p>}
                 </div>
 
-                {/* <div class="mb-3">
+                <div class="mb-3">
                     <label for="student_photo" class="form-label">Upload Photo</label>
-                    <input class="form-control" type="file" id="student_photo" name='student_photo' value={student_photo} onChange={e => onInputChange(e)} placeholder='Upload Photo' />
-                </div> */}
+                    <input class="form-control" type="text" id="student_photo" name='student_photo' value={student_photo} onChange={e => onInputChange(e)} placeholder='Photo URL' />
+                </div>
 
                 <div class="mb-3">
                     <input type="text" class="form-control" id="student_course" name='student_course' value={student_course} onChange={e => onInputChange(e)} placeholder='Course' />

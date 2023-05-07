@@ -11,7 +11,6 @@ const AddCourse = () => {
         coursetype: '',
         overview: '',
         thumbImage:'',
-        syllabusfile:'',
         description: '',
         duration: '',
         internship:'',
@@ -31,20 +30,23 @@ const AddCourse = () => {
         const courseObj = {...courseDetails, [event.target.name]:event.target.value}
         setCourseDetails(courseObj)
         setErrors(ValidateCourse(courseObj))
+        console.log(courseDetails)
     }
 
-    function handleCourseThumb(event) {
+    // function handleCourseThumb(event) {
         
-        // console.log(event.target.files[0]);
-        const selectedFile = event.target.files[0];
-        const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
-        if (!allowedExtensions.exec(selectedFile.name)) {
-            alert('Please upload file having extensions .jpeg/.jpg/.png only.');
-            event.target.value = '';
-            return false;
-        }
-        setCourseDetails({...courseDetails, thumbImage:event.target.files[0]})
-      }
+    //     // console.log(event.target.files[0]);
+    //     const selectedFile = event.target.files[0];
+    //     const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+    //     if (!allowedExtensions.exec(selectedFile.name)) {
+    //         alert('Please upload file having extensions .jpeg/.jpg/.png only.');
+    //         event.target.value = '';
+    //         return false;
+    //     }
+    //     setCourseDetails({...courseDetails, thumbImage:event.target.files[0]})
+    //   }
+
+
 
    //insert function
    const inputcourse = async (e) => {
@@ -52,23 +54,24 @@ const AddCourse = () => {
     console.log(courseDetails);
 
     
-      const formData = new FormData();
-      formData.append('thumbImage', courseDetails.thumbImage, courseDetails.thumbImage.name)
-      formData.append('coursetitle', courseDetails.coursetitle)
-      formData.append('coursetype', courseDetails.coursetype)
-      formData.append('overview', courseDetails.overview)
-      formData.append('description', courseDetails.description)
-      formData.append('duration', courseDetails.duration)
-      formData.append('internship', courseDetails.internship)
-      formData.append('fee', courseDetails.fee)
-      formData.append('cmode', courseDetails.cmode)
-      formData.append('startdate', courseDetails.startdate)
-      formData.append('enddate', courseDetails.enddate)
-      formData.append('cstatus', courseDetails.cstatus)
-      console.log(formData)
+    //   const formData = new FormData();
+    //   formData.append('thumbImage', courseDetails.thumbImage, courseDetails.thumbImage.name)
+    //   formData.append('thumbImage', courseDetails.thumbImage)
+    //   formData.append('coursetitle', courseDetails.coursetitle)
+    //   formData.append('coursetype', courseDetails.coursetype)
+    //   formData.append('overview', courseDetails.overview)
+    //   formData.append('description', courseDetails.description)
+    //   formData.append('duration', courseDetails.duration)
+    //   formData.append('internship', courseDetails.internship)
+    //   formData.append('fee', courseDetails.fee)
+    //   formData.append('cmode', courseDetails.cmode)
+    //   formData.append('startdate', courseDetails.startdate)
+    //   formData.append('enddate', courseDetails.enddate)
+    //   formData.append('cstatus', courseDetails.cstatus)
+    //   console.log(formData)
       try {
         console.log("in input course try section")
-        const response = await axios.post("/addcourse", formData);        
+        const response = await axios.post("/addcourse", courseDetails);        
         alert(`${response.data.coursetitle} Added to Database`);        
         navigate("/admindashboard/course_details"); 
       } catch (error) {
@@ -125,9 +128,15 @@ const AddCourse = () => {
                 </div>
 
                 <div class="mb-3 row">
-                    <div className='col'>
+                    {/* <div className='col'>
                         <label for="thumbImage" class="form-label">Upload Thumbnail</label>
                         <input class="form-control" type="file" name='thumbImage' id="thumbImage" placeholder='Upload Thumbnail' onChange={handleCourseThumb} />
+                        {<p style={{color:"red"}}>{errors.thumbImage}</p>}
+                    </div> */}
+
+                    <div className='col'>
+                        <label for="thumbImage" class="form-label">Upload Thumbnail</label>
+                        <input class="form-control" type="text" name='thumbImage' id="thumbImage" placeholder='Thumbnail URL here' onChange={handleInput} />
                         {<p style={{color:"red"}}>{errors.thumbImage}</p>}
                     </div>
                 </div>

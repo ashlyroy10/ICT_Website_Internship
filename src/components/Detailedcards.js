@@ -8,7 +8,7 @@ import axios from "axios";
 const Detailedcards = () => {
   
   let { code } = useParams();
-  let fpath = "http://localhost:5000/uploads/coursethumb/";
+  // let fpath = "http://localhost:5000/uploads/coursethumb/";
 
   const [typecourse, settypecourse] = useState([]);
 
@@ -31,7 +31,7 @@ const Detailedcards = () => {
         {typecourse.map((value, index) => (
           <div class="col p-3" key={index}>
             <div class="card1 h-100 border border-light-subtle rounded-3 border-4">
-              <img src={fpath+value.thumbImage} class="card-img-top" alt={value.coursetitle+"image"} />
+              <img src={value.thumbImage} class="card-img-top" alt={value.coursetitle+"image"} />
               <div class="card-body p-3">
                 <Link to={`/courses/${value.coursetype}/${value._id}`}>
                   <h6 class="card-title">{value.coursetitle}</h6>

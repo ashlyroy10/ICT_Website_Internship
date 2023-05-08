@@ -72,7 +72,7 @@ const AdminTestimonial = () => {
           {testimonialList.map((testimonials, index) => (
             <tr key={index}>
               <td className='align-middle'>{index+1}</td>
-              <td className='align-middle'>{testimonials.testimonial}</td>
+              <td className='align-middle' width={500}>{testimonials.testimonial}</td>
               <td className='align-middle'>{testimonials.student_name}</td>
               <td className='align-middle'><img src={testimonials.student_photo} alt={testimonials.student_name} width="80px" /></td>              
               <td className='align-middle'>{testimonials.student_course}</td>

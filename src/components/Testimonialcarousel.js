@@ -5,7 +5,7 @@ import { Carousel } from 'react-bootstrap';
 
 const TestimonialCarousel = () => {
   const [testimonialList, setTestimonialList] = useState([]);
-  const filepath = 'http://localhost:5000/uploads/testimonialphoto/';
+  // const filepath = 'http://localhost:5000/uploads/testimonialphoto/';
 
   useEffect(() => {
     async function fetchTestimonial() {
@@ -28,7 +28,7 @@ const TestimonialCarousel = () => {
               <div className="row g-0">
                 <div className="col-md-4 m-auto">
                   <img
-                    src={filepath + value.student_photo}
+                    src={value.student_photo}
                     className="img h-100  rounded-circle"
                     alt={value.student_name}
                     
@@ -42,10 +42,10 @@ const TestimonialCarousel = () => {
                     </p>
                     <p className="card-title">{value.student_name}</p>
                     <p className="card-text">
-                      <strong>Course:</strong> {value.student_course}
+                      {value.student_course}, {value.batch}
                     </p>
                     <p className="card-text mb-3">
-                      <strong>Batch:</strong> {value.batch}
+                      
                     </p>
                   </div>
                 </div>

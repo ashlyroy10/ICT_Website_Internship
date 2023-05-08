@@ -103,7 +103,7 @@ const AddTestimonial = () => {
 
                 <div class="mb-3">
                     <label for="student_photo" class="form-label">Upload Photo</label>
-                    <input class="form-control" type="file" id="student_photo" name='student_photo' onChange={handleInput} placeholder='Upload Photo' />
+                    <input class="form-control" type="text" id="student_photo" name='student_photo' onChange={handleInput} placeholder='Testimonial Photo URL' />
                 </div>
 
                 <div class="mb-3">

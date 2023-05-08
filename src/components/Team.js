@@ -6,7 +6,7 @@ import axios from 'axios';
 const Team = () => {
 
   const [staffList, setstaffList] = useState([]);
-  const filepath = 'http://localhost:5000/uploads/staffprofile/';
+  // const filepath = 'http://localhost:5000/uploads/staffprofile/';
 
   useEffect(() => {
     async function fetchstaff() {
@@ -30,11 +30,10 @@ const Team = () => {
         <div class="col" key={index}>
        
           <div class="teamcard card"  >
-            <img src={filepath + value.photo} class="card-img-top" alt="img"/>
+            <img src={value.photo} class="card-img-top" alt="img"/>
             <div class="card-custom card-body">
               <h5 class="card-title">{value.staffname}</h5>
               <p class="card-text"><small>{value.designation}</small></p>
-              <p class="card-text"><small>({value.department})</small></p>
             </div>
           </div>
         

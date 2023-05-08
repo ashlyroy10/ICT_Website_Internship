@@ -99,13 +99,13 @@ const EditStaff = () => {
                   <label for="department" class="form-label">Select Operational Unit:</label>
                   <select className='form-control' name="department" value={department} onChange={e => onInputChange(e)} id="department">
                     <option value=""></option>
-                    <option value="acd">Academic</option>
-                    <option value="crp">Corporate</option>
-                    <option value="gov">Government</option>
-                    <option value="its">IT Solutions</option>
-                    <option value="kgo">Knowledge Office</option>
-                    <option value="rtl">Retail</option>
-                    <option value="crf">Corporate Functions</option>
+                    <option value="Academic">Academic</option>
+                    <option value="Corporate">Corporate</option>
+                    <option value="Government">Government</option>
+                    <option value="IT Solutions">IT Solutions</option>
+                    <option value="Knowledge Office">Knowledge Office</option>
+                    <option value="Retail">Retail</option>
+                    <option value="Corporate Functions">Corporate Functions</option>
                   </select>
                   {<p style={{color:"red"}}>{errors.department}</p>}
 

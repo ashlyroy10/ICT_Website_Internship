@@ -3,7 +3,6 @@ export function ValidateCourse(values){
     
     let errors = {};
 
-    const coursetitle_pattern = /^[a-zA-Z0-9]+([ \t]*[a-zA-Z0-9.,]+){4,99}$/
     const overview_pattern = /^(?:\S+\s+){0,749}\S+$/
     const description_pattern = /^(?:\S+\s+){0,1999}\S+$/
     const duration_pattern = /^(?! )\d{1,3}$/
@@ -12,9 +11,6 @@ export function ValidateCourse(values){
     if(values.coursetitle === "") {
         errors.coursetitle = "Cannot be Empty"
     } 
-    else if(!coursetitle_pattern.test(values.coursetitle)){
-        errors.coursetitle = "Not in the right format"
-    }
 
     if(values.overview === "") {
         errors.overview = "Cannot be Empty"

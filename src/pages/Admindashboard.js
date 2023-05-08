@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../assets/css/style.css";
-import { whitelogo} from "../assets/images/LOGO_ICTAK-White.png"
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import Adminheader from "../components/Adminheader";
 
@@ -20,33 +19,12 @@ const Admindashboard = () => {
   }, [navigate]);
 
   
-  let timeoutID;
-
-function startTimer() {
-  // Set a timer to clear local storage after 5 minutes of inactivity
-  timeoutID = setTimeout(clearLocalStorage, 5 * 60 * 1000);
-}
-
-function clearTimer() {
-  // If there is an active timer, clear it
-  if (timeoutID) {
-    clearTimeout(timeoutID);
-    timeoutID = null;
-  }
-}
+ 
 
 function clearLocalStorage() {
   // Clear local storage
   localStorage.clear();
 }
-
-// Call startTimer() when the user interacts with the app
-window.addEventListener('mousemove', startTimer);
-window.addEventListener('keydown', startTimer);
-
-// Call clearTimer() when the user interacts with the app
-window.addEventListener('mousemove', clearTimer);
-window.addEventListener('keydown', clearTimer);
 
   //FUNCTION LOGOUT
   const logout = () => {
